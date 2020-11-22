@@ -1,10 +1,3 @@
-import UIkit from 'uikit'
-import Icons from 'uikit/dist/js/uikit-icons'
-
-UIkit.use(Icons)
-
-require('overlayscrollbars')
-
 $(function () {
   $('#sidebar-toggler').click(function (e) {
     let container = $('.content-wrapper')

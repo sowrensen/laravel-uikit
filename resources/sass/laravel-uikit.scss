@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+  .content-wrapper {
+    transition: padding-left 0.3s ease-in-out;
+    padding-left: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding-left: 0;
+  }
+}
