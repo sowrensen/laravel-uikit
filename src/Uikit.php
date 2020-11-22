@@ -1,6 +1,6 @@
 <?php
 
-namespace Sowren\Package;
+namespace Sowren\LaravelUikit;
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sowren\Package;
+namespace Sowren\LaravelUikit;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,7 +22,20 @@ class UikitServiceProvider extends ServiceProvider
      */
     private function registerResources()
     {
-        //
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'uikit');
+        $this->bindSingleton();
+    }
+
+    /**
+     * Register any bindings to the app.
+     *
+     * @return void
+     */
+    protected function bindSingleton()
+    {
+        $this->app->singleton(Uikit::class, function ($app) {
+            return new Uikit();
+        });
     }
 
     /**

@@ -1,17 +1,18 @@
-@inject('helper', App\Helpers\MenuHelper)
+@inject('helper', \Sowren\LaravelUikit\Helpers\MenuHelper)
 
 @if($helper->isHeader($item))
-    @include('layouts.partials.sidebar.sidebar-header')
+    @include('uikit::partials.sidebar.sidebar-header')
 @endif
 
 @if($helper->isDivider($item))
-    @include('layouts.partials.sidebar.sidebar-divider')
-@endif
-
-@if($helper->isLink($item))
-    @include('layouts.partials.sidebar.sidebar-link')
+    @include('uikit::partials.sidebar.sidebar-divider')
 @endif
 
 @if($helper->isSubmenu($item))
-    @include('layouts.partials.sidebar.sidebar-submenu')
+    @include('uikit::partials.sidebar.sidebar-submenu')
 @endif
+
+@if($helper->isLink($item))
+    @include('uikit::partials.sidebar.sidebar-link')
+@endif
+

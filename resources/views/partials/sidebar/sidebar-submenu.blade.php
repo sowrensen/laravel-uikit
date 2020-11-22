@@ -11,6 +11,6 @@
         @endif
     </a>
     <ul class="uk-nav-sub uk-nav-parent-icon" uk-nav>
-        @each('layouts.partials.sidebar.items', $item['submenu'], 'item')
+        @each('uikit::partials.sidebar.sidebar-items', $item['submenu'], 'item')
     </ul>
 </li>
