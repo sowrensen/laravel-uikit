@@ -4,7 +4,7 @@ namespace Sowren\Package;
 
 use Illuminate\Support\ServiceProvider;
 
-class SamplePackageServiceProvider extends ServiceProvider
+class UikitServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -32,8 +32,8 @@ class SamplePackageServiceProvider extends ServiceProvider
      */
     protected function registerFacades()
     {
-        $this->app->singleton('SamplePackage', function ($app) {
-            return new \Sowren\Package\SamplePackage();
+        $this->app->singleton('Uikit', function ($app) {
+            return new \Sowren\LaravelUikit\Uikit();
         });
     }
 
@@ -45,7 +45,7 @@ class SamplePackageServiceProvider extends ServiceProvider
     private function registerPublishing()
     {
         $this->publishes([
-            __DIR__.'/../config/package.php' => config_path('package.php'),
-        ], 'sample-package-config');
+            __DIR__.'/../config/uikit.php' => config_path('uikit.php'),
+        ], 'laravel-uikit-config');
     }
 }

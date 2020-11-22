@@ -4,7 +4,7 @@ namespace Sowren\Package;
 
 
 
-class SamplePackage
+class Uikit
 {
     // Sample pakcage methods and properties
 }
