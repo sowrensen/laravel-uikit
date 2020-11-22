@@ -1,0 +1,43 @@
+{
+  "name": "sowrensen/laravel-uikit",
+  "description": "An pre-built admin panel for Laravel Apps using UIKit",
+  "keywords": [
+    "laravel",
+    "adminpanel",
+    "uikit",
+  ],
+  "homepage": "https://github.com/sowrensen/laravel-uikit",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sowren Sen",
+      "email": "sowrensen@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.0",
+    "laravel/framework": ">=6.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": ">=3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sowren\\LaravelUikit\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sowren\\LaravelUikit\\Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sowren\\LaravelUikit\\UikitServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
