@@ -22,19 +22,7 @@ class UikitServiceProvider extends ServiceProvider
      */
     private function registerResources()
     {
-        $this->registerFacades();
-    }
-
-    /**
-     * Register any bindings to the app.
-     *
-     * @return void
-     */
-    protected function registerFacades()
-    {
-        $this->app->singleton('Uikit', function ($app) {
-            return new \Sowren\LaravelUikit\Uikit();
-        });
+        //
     }
 
     /**
