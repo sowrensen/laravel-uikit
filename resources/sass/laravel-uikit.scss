@@ -1,13 +1,23 @@
+@import "variables";
+
 .uk-sidebar {
   width: 210px;
-  background-color: #222;
   padding: 20px;
   position: fixed;
   top: 80px;
   bottom: 0;
   overflow: auto;
   z-index: 9999;
-  border-top: 1px solid #4E4E4E;
+}
+
+.uk-sidebar.uk-sidebar-dark {
+  background-color: $dark;
+  border-top: 1px solid $sidebar-border-dark;
+}
+
+.uk-sidebar.uk-sidebar-light {
+  background-color: $light;
+  border-right: 1px solid $sidebar-border-light;
 }
 
 .uk-content {

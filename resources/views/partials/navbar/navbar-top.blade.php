@@ -1,7 +1,6 @@
-{{-- TODO: configurable --}}
 <div uk-sticky>
     <nav class="uk-navbar-container uk-container-expand uk-light" uk-navbar
-         style="background-color: #262626">
+         style="background-color: {{ config('uikit.navbar.background_color', '#262626') }}">
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li>

@@ -11,8 +11,8 @@
     <div uk-grid class="uk-grid-collapse uk-height-viewport">
 
         {{-- Sidebar in non-mobile displays --}}
-        <aside class="uk-light uk-visible@m uk-sidebar" id="sidebar"
-               style="">
+        <aside class="uk-visible@m uk-sidebar {{ config('uikit.sidebar.theme', 'dark') == 'dark' ? 'uk-sidebar-dark uk-light' : 'uk-sidebar-light' }}"
+               id="sidebar">
             @include('uikit::partials.sidebar.sidebar-main')
         </aside>
 
