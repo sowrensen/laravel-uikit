@@ -1,17 +1,34 @@
-$(function () {
-  // Toggle sidebar in display larger than 768
-  $('#sidebar-toggler').click(function (e) {
-    let wrapper = $('#wrapper')
-    wrapper.toggleClass('extra-padding')
-  })
+/**
+ * Laravel-UIKit
+ *
+ * Author: Sowren Sen (sowrensen@gmail.com)
+ * Repository: https://github.com/sowrensen/laravel-uikit
+ */
 
-  // Set up overlay scrollbar
-  $('#sidebar').overlayScrollbars({
-    className: 'os-theme-light',
-    sizeAutoCapable: true,
-    scrollbars: {
-      autoHide: 'leave',
-      clickScrolling: true
-    }
-  })
-})
+class LaravelUikit {
+  constructor (variant) {
+    this.variant = variant
+    this.toggleSidebar()
+    this.initializeOverlayScrollbar()
+  }
+
+  toggleSidebar () {
+    $('#sidebar-toggler').click(function (e) {
+      let wrapper = $('#wrapper')
+      wrapper.toggleClass('extra-padding')
+    })
+  }
+
+  initializeOverlayScrollbar () {
+    $('#sidebar').overlayScrollbars({
+      className: `os-theme-${this.variant}`,
+      sizeAutoCapable: true,
+      scrollbars: {
+        autoHide: 'leave',
+        clickScrolling: true
+      }
+    })
+  }
+}
+
+module.exports = LaravelUikit

@@ -6,5 +6,5 @@ namespace Sowren\LaravelUikit;
 
 class Uikit
 {
-    // Sample pakcage methods and properties
+    // Sample package methods and properties
 }
