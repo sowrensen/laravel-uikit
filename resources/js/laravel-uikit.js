@@ -1,12 +1,11 @@
 $(function () {
+  // Toggle sidebar in display larger than 768
   $('#sidebar-toggler').click(function (e) {
-    let container = $('.content-wrapper')
-    if (container.css('padding-left') == '0px') {
-      container.css('padding-left', '250px')
-    } else {
-      container.css('padding-left', '0px')
-    }
+    let wrapper = $('#wrapper')
+    wrapper.toggleClass('extra-padding')
   })
+
+  // Set up overlay scrollbar
   $('#sidebar').overlayScrollbars({
     className: 'os-theme-light',
     sizeAutoCapable: true,
