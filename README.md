@@ -1,3 +1,8 @@
-# Laravel Package Boilerplate
+# Laravel-UIKit
 
-Fork this repository and start building your package.
+A pre-built admin panel for Laravel Apps using UIKit.
+
+Instructions
+---
+
+Coming soon...
