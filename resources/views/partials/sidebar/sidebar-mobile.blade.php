@@ -1,4 +1,4 @@
-<div id="sidebar-mobile" uk-offcanvas="overlay: true; container: #app" class="uk-hidden@m">
+<div id="sidebar-mobile" uk-offcanvas="overlay: true;" class="uk-hidden@m">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 

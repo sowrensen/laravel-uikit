@@ -1,7 +1,9 @@
 <div uk-sticky>
-    <nav class="uk-navbar-container uk-container-expand uk-light" uk-navbar
-         style="background-color: {{ config('uikit.navbar.background_color', '#262626') }}">
+    <nav class="uk-navbar-container uk-container-expand {{ config('uikit.navbar.extra_classes') }}" uk-navbar
+         style="background: {{ config('uikit.navbar.background_color', '#262626') }}">
         <div class="uk-navbar-left">
+
+            {{-- sidebar-toogles --}}
             <ul class="uk-navbar-nav">
                 <li>
                     <a href="#" uk-navbar-toggle-icon uk-toggle="target: #sidebar; animation: uk-animation-slide-left"
@@ -12,16 +14,19 @@
                     </a>
                 </li>
             </ul>
-            {{-- TODO: configurable --}}
-            <a href="/" class="uk-navbar-item uk-logo uk-visible@m">
-                <svg width="28" height="34" viewBox="0 0 28 34" xmlns="http://www.w3.org/2000/svg"
-                     class="uk-margin-small-right uk-svg" data-svg="../images/uikit-logo.svg">
-                    <polygon fill="#fff" points="19.1,4.1 13.75,1 8.17,4.45 13.6,7.44 "></polygon>
-                    <path fill="#fff"
-                          d="M21.67,5.43l-5.53,3.34l6.26,3.63v9.52l-8.44,4.76L5.6,21.93v-7.38L0,11.7v13.51l13.75,8.08L28,25.21V9.07 L21.67,5.43z"></path>
-                </svg>
-                Fortikit
+            {{-- /.sidebar-toggles --}}
+
+            {{-- navbar-logo --}}
+            <a href="{{ config('uikit.navbar.logo.url', '/') }}"
+               class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
+                @if(config('uikit.navbar.logo.display_image'))
+                    <img src="{{ config('uikit.navbar.logo.image') }}"
+                         class="{{ config('uikit.navbar.logo.image_classes') }}"
+                         alt="{{ config('uikit.navbar.logo.image_alt_text') }}" width="34" height="34">
+                @endif
+                {{ config('uikit.navbar.logo.app_name') }}
             </a>
+            {{-- /.navbar-logo --}}
         </div>
         @auth
             <div class="uk-navbar-right">
