@@ -1,6 +1,6 @@
 <div uk-sticky>
     <nav class="uk-navbar-container uk-container-expand {{ config('uikit.navbar.extra_classes') }}" uk-navbar
-         style="background: {{ config('uikit.navbar.background_color', '#262626') }}">
+         style="background: {{ config('uikit.navbar.background', '#262626') }}">
         <div class="uk-navbar-left">
 
             {{-- sidebar-toogles --}}
