@@ -2,7 +2,7 @@
 <li>
     <a href="#">
         @if($avatar)
-            <img data-src="{{ $avatar }}"
+            <img data-src="{{ asset($avatar) }}"
                  class="{{ config('uikit.navbar.user_section.image_classes') }}"
                  width="25" height="25" alt="{{ auth()->user()->name }}" uk-img>
         @else
@@ -11,13 +11,13 @@
     </a>
 
     {{-- dropdown --}}
-    <form uk-drop="pos: bottom-right" action="{{ route('logout') }}" method="post">
+    <form uk-drop="pos: bottom-right" action="{{ url(config('uikit.navbar.user_section.logout_url')) }}" method="post">
         @csrf
         <div class="uk-card uk-card-default">
             <div class="uk-card-body">
                 <div class="uk-flex uk-flex-column uk-flex-center uk-flex-middle">
                     @if($avatar)
-                        <img data-src="{{ $avatar }}" width="70" height="70"
+                        <img data-src="{{ asset($avatar) }}" width="70" height="70"
                              class="{{ config('uikit.navbar.user_section.image_classes') }}"
                              alt="{{ auth()->user()->name }}" uk-img>
                     @endif
@@ -26,7 +26,7 @@
             </div>
             <div class="uk-card-footer uk-padding-small">
                 <div class="uk-flex uk-flex-between uk-flex-middle">
-                    <a href="{{ config('uikit.navbar.user_section.profile_url') }}"
+                    <a href="{{ url(config('uikit.navbar.user_section.profile_url')) }}"
                        class="uk-button uk-button-small uk-button-primary">
                         Profile
                     </a>

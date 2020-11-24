@@ -16,10 +16,10 @@
             </ul>
 
             {{-- navbar-logo --}}
-            <a href="{{ config('uikit.navbar.logo.url', '/') }}"
+            <a href="{{ config('uikit.navbar.logo.link', '/') }}"
                class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
                 @if(config('uikit.navbar.logo.display_image'))
-                    <img src="{{ config('uikit.navbar.logo.image') }}"
+                    <img src="{{ asset(config('uikit.navbar.logo.image')) }}"
                          class="{{ config('uikit.navbar.logo.image_classes') }}"
                          alt="{{ config('uikit.navbar.logo.image_alt_text') }}" width="34" height="34">
                 @endif

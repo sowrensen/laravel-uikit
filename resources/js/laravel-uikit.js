@@ -6,7 +6,7 @@
  */
 
 class LaravelUikit {
-  constructor (variant) {
+  constructor (variant='dark') {
     this.variant = variant
     this.toggleSidebar()
     this.initializeOverlayScrollbar()
