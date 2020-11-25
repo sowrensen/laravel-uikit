@@ -8,15 +8,15 @@
         <div class="uk-card-body">
             <div class="uk-form-horizontal">
                 <div class="uk-margin">
-                    <label for="username" class="uk-form-label">Username</label>
+                    <label for="email" class="uk-form-label">Email</label>
                     <div class="uk-form-controls">
-                        <input type="text" id="username" name="username"
-                               class="uk-input {{ $errors->has('username') ? 'uk-form-danger' : '' }}"
-                               placeholder="Email or Phone"
-                               value="{{ old('username') }}"
+                        <input type="text" id="email" name="email"
+                               class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}"
+                               placeholder="jon@example.com"
+                               value="{{ old('email') }}"
                                autocomplete="off" required>
-                        @if($errors->has('username'))
-                            <small class="uk-text-meta uk-text-danger">{{ $errors->first('username') }}</small>
+                        @if($errors->has('email'))
+                            <small class="uk-text-meta uk-text-danger">{{ $errors->first('email') }}</small>
                         @endif
                     </div>
                 </div>

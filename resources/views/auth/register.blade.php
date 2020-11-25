@@ -19,21 +19,6 @@
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="gender">Gender</label>
-                    <div class="uk-form-controls">
-                        <select class="uk-select" id="gender" name="gender">
-                            <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                            <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-                            <option value="others" {{ old('gender') == 'others' ? 'selected' : '' }}>Others</option>
-                        </select>
-                        @if($errors->has('gender'))
-                            <small class="uk-text-meta uk-text-danger">{{ $errors->first('gender') }}</small>
-                        @endif
-                    </div>
-                </div>
-                <hr>
-                <p class="uk-text-meta uk-form-controls">You can either choose email or phone or both</p>
-                <div class="uk-margin">
                     <label for="email" class="uk-form-label">Email</label>
                     <div class="uk-form-controls">
                         <input type="text" class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}"
@@ -41,17 +26,6 @@
                                value="{{ old('email') }}" autocomplete="off">
                         @if($errors->has('email'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('email') }}</small>
-                        @endif
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <label for="phone" class="uk-form-label">Phone</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-input {{ $errors->has('phone') ? 'uk-form-danger' : '' }}"
-                               id="phone" name="phone" placeholder="999 1100"
-                               value="{{ old('phone') }}" autocomplete="off">
-                        @if($errors->has('phone'))
-                            <small class="uk-text-meta uk-text-danger">{{ $errors->first('phone') }}</small>
                         @endif
                     </div>
                 </div>
