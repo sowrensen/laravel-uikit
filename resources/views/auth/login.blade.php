@@ -34,7 +34,8 @@
                 </div>
                 <div class="uk-margin">
                     <div class="uk-form-controls">
-                        <label><input class="uk-checkbox" type="checkbox" name="remember" id="remember"> Remember me</label>
+                        <label><input class="uk-checkbox" type="checkbox" name="remember" id="remember"> Remember
+                            me</label>
                     </div>
                 </div>
             </div>

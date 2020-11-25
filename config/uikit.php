@@ -4,6 +4,24 @@ return [
 
     'icon_theme' => 'uikit', // material
 
+    'title' => 'Laravel UIKit',
+    'title_prefix' => '',
+    'title_suffix' => '::Laravel UIKit',
+
+    'brand_name' => config('app.name'),
+    'brand_logo' => '/placeholders/cgit_logo.png',
+    'brand_logo_alt_text' => 'Laravel UIKit',
+
+    // Accepts route only
+    'routes' => [
+        'login_route' => 'login',
+        'logout_route' => 'logout',
+        'profile_route' => 'profile',
+        'register_route' => 'register',
+        'password_reset'=> 'password.request',
+        'password_email' => 'password.email'
+    ],
+
     'navbar' => [
         'background' => '#262626', // CSS linear-gradient acceptable
         'extra_classes' => 'uk-light',
@@ -11,10 +29,7 @@ return [
             'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
             'display_image' => true,
-            'image' => '/placeholders/cgit_logo.png',
-            'image_alt_text' => 'Laravel UIKit',
             'image_classes' => 'uk-margin-small-right uk-border-rounded',
-            'brand' => config('app.name')
         ],
         'user_section' => [
             // Define a method getAvatar() in User class that
@@ -22,8 +37,6 @@ return [
             'enabled' => true,
             // Applicable for both images (navbar and dropdown card)
             'image_classes' => 'uk-border-circle',
-            'profile_url' => 'profile',
-            'logout_url' => 'logout'
         ]
     ],
 
@@ -113,6 +126,7 @@ return [
     ],
 
     'footer' => [
-        'background' => '#EAEAEA'
+        'background' => '#EAEAEA',
+        'classes' => 'uk-padding uk-text-small uk-flex'
     ]
 ];
