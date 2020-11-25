@@ -19,11 +19,11 @@
             <a href="{{ config('uikit.navbar.logo.link', '/') }}"
                class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
                 @if(config('uikit.navbar.logo.display_image'))
-                    <img src="{{ asset(config('uikit.navbar.logo.image')) }}"
+                    <img src="{{ asset(config('uikit.brand_logo')) }}"
                          class="{{ config('uikit.navbar.logo.image_classes') }}"
-                         alt="{{ config('uikit.navbar.logo.image_alt_text') }}" width="34" height="34">
+                         alt="{{ config('uikit.brand_logo_alt_text') }}" width="34" height="34">
                 @endif
-                {{ config('uikit.navbar.logo.brand') }}
+                {{ config('uikit.brand_name') }}
             </a>
         </div>
 

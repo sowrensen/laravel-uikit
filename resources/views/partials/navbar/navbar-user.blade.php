@@ -11,7 +11,7 @@
     </a>
 
     {{-- dropdown --}}
-    <form uk-drop="pos: bottom-right" action="{{ url(config('uikit.navbar.user_section.logout_url')) }}" method="post">
+    <form uk-drop="pos: bottom-right" action="{{ url(config('uikit.urls.logout_url')) }}" method="post">
         @csrf
         <div class="uk-card uk-card-default">
             <div class="uk-card-body">
@@ -26,7 +26,7 @@
             </div>
             <div class="uk-card-footer uk-padding-small">
                 <div class="uk-flex uk-flex-between uk-flex-middle">
-                    <a href="{{ url(config('uikit.navbar.user_section.profile_url')) }}"
+                    <a href="{{ url(config('uikit.urls.profile_url')) }}"
                        class="uk-button uk-button-small uk-button-primary">
                         Profile
                     </a>
