@@ -10,7 +10,8 @@
                 <div class="uk-margin">
                     <label for="username" class="uk-form-label">Username</label>
                     <div class="uk-form-controls">
-                        <input type="text" id="username" name="username" class="uk-input"
+                        <input type="text" id="username" name="username"
+                               class="uk-input {{ $errors->has('username') ? 'uk-form-danger' : '' }}"
                                placeholder="Email or Phone"
                                value="{{ old('username') }}"
                                autocomplete="off" required>
@@ -22,12 +23,18 @@
                 <div class="uk-margin">
                     <label for="password" class="uk-form-label">Password</label>
                     <div class="uk-form-controls">
-                        <input type="password" id="password" name="password" class="uk-input"
+                        <input type="password" id="password" name="password"
+                               class="uk-input {{ $errors->has('password') ? 'uk-form-danger' : '' }}"
                                placeholder="******"
                                autocomplete="password" required>
                         @if($errors->has('password'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('password') }}</small>
                         @endif
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-form-controls">
+                        <label><input class="uk-checkbox" type="checkbox" name="remember" id="remember"> Remember me</label>
                     </div>
                 </div>
             </div>

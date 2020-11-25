@@ -10,7 +10,8 @@
                 <div class="uk-margin">
                     <label for="name" class="uk-form-label">Name</label>
                     <div class="uk-form-controls">
-                        <input type="text" class="uk-input" id="name" name="name" placeholder="Jon Snow"
+                        <input type="text" class="uk-input {{ $errors->has('name') ? 'uk-form-danger' : '' }}"
+                               id="name" name="name" placeholder="Jon Snow"
                                value="{{ old('name') }}" autocomplete="off" required>
                         @if($errors->has('name'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('name') }}</small>
@@ -35,7 +36,8 @@
                 <div class="uk-margin">
                     <label for="email" class="uk-form-label">Email</label>
                     <div class="uk-form-controls">
-                        <input type="text" class="uk-input" id="email" name="email" placeholder="jon@example.com"
+                        <input type="text" class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}"
+                               id="email" name="email" placeholder="jon@example.com"
                                value="{{ old('email') }}" autocomplete="off">
                         @if($errors->has('email'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('email') }}</small>
@@ -45,7 +47,8 @@
                 <div class="uk-margin">
                     <label for="phone" class="uk-form-label">Phone</label>
                     <div class="uk-form-controls">
-                        <input type="text" class="uk-input" id="phone" name="phone" placeholder="999 1100"
+                        <input type="text" class="uk-input {{ $errors->has('phone') ? 'uk-form-danger' : '' }}"
+                               id="phone" name="phone" placeholder="999 1100"
                                value="{{ old('phone') }}" autocomplete="off">
                         @if($errors->has('phone'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('phone') }}</small>
@@ -56,7 +59,9 @@
                 <div class="uk-margin">
                     <label for="password" class="uk-form-label">Password</label>
                     <div class="uk-form-controls">
-                        <input type="password" id="password" name="password" class="uk-input" placeholder="******"
+                        <input type="password" id="password" name="password"
+                               class="uk-input {{ $errors->has('password') ? 'uk-form-danger' : '' }}"
+                               placeholder="******"
                                autocomplete="password" required>
                         @if($errors->has('password'))
                             <small class="uk-text-meta uk-text-danger">{{ $errors->first('password') }}</small>
