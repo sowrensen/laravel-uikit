@@ -5,7 +5,7 @@
 @section('auth_content')
     <form action="{{ route(config('uikit.routes.login_route')) }}" method="post">
         @csrf
-        <div class="uk-card-body">
+        <div class="uk-card-body uk-padding-remove-bottom">
             <div class="uk-form-horizontal">
                 <div class="uk-margin">
                     <label for="email" class="uk-form-label">Email</label>

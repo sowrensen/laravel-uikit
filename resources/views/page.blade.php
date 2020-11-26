@@ -1,5 +1,10 @@
 @extends('uikit::master')
 
+@section('uikitstyles')
+    @stack('css')
+    @yield('css')
+@stop
+
 @section('body')
     {{-- Top navigation bar --}}
     @include('uikit::partials.navbar.navbar-top')
@@ -27,3 +32,8 @@
         </div>
     </div>
 @endsection
+
+@section('uikitscripts')
+    @stack('js')
+    @yield('js')
+@stop

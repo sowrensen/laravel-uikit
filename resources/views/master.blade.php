@@ -12,12 +12,19 @@
 
     {{-- Styles --}}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    {{-- Custom styles --}}
+    @yield('uikitstyles')
 </head>
 <body>
 <div id="app">
     @yield('body')
 </div>
+
 {{-- Scripts --}}
 <script src="{{ mix('js/app.js') }}"></script>
+
+{{-- Custom scripts --}}
+@yield('uikitscripts')
 </body>
 </html>
