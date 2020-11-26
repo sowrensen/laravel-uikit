@@ -2,9 +2,11 @@
 
 namespace Sowren\LaravelUikit;
 
-
-
 class Uikit
 {
-    // Sample package methods and properties
+    public function menu()
+    {
+        // TODO: Process menu
+        return config('uikit.sidebar.menu');
+    }
 }

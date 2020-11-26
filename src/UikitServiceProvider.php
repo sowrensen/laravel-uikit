@@ -3,6 +3,7 @@
 namespace Sowren\LaravelUikit;
 
 use Illuminate\Support\ServiceProvider;
+use Sowren\LaravelUikit\Http\ViewComposers\UikitComposer;
 
 class UikitServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class UikitServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'uikit');
         $this->bindSingleton();
+        $this->registerViewComposer();
     }
 
     /**
@@ -48,5 +50,14 @@ class UikitServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/uikit.php' => config_path('uikit.php'),
         ], 'laravel-uikit-config');
+    }
+
+    /**
+     * Register the view composers.
+     *
+     */
+    public function registerViewComposer()
+    {
+        \View::composer('uikit::page', UikitComposer::class);
     }
 }
