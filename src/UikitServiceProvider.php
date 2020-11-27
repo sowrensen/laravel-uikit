@@ -3,6 +3,8 @@
 namespace Sowren\LaravelUikit;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Container\Container;
+use Sowren\LaravelUikit\Providers\EventServiceProvider;
 use Sowren\LaravelUikit\Http\ViewComposers\UikitComposer;
 
 class UikitServiceProvider extends ServiceProvider
@@ -16,6 +18,14 @@ class UikitServiceProvider extends ServiceProvider
         $this->registerResources();
     }
 
+    public function register()
+    {
+        // $this->app->register(EventServiceProvider::class);
+        $this->app->singleton(Uikit::class, function (Container $app) {
+            return new Uikit($app);
+        });
+    }
+
     /**
      * Register all package resources.
      *
@@ -24,20 +34,8 @@ class UikitServiceProvider extends ServiceProvider
     private function registerResources()
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'uikit');
-        $this->bindSingleton();
         $this->registerViewComposer();
-    }
-
-    /**
-     * Register any bindings to the app.
-     *
-     * @return void
-     */
-    protected function bindSingleton()
-    {
-        $this->app->singleton(Uikit::class, function ($app) {
-            return new Uikit();
-        });
+        $this->registerEventListeners();
     }
 
     /**
@@ -59,5 +57,10 @@ class UikitServiceProvider extends ServiceProvider
     public function registerViewComposer()
     {
         \View::composer('uikit::page', UikitComposer::class);
+    }
+
+    public function registerEventListeners()
+    {
+        $this->app->register(EventServiceProvider::class);
     }
 }
