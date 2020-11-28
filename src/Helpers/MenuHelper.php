@@ -3,7 +3,6 @@
 
 namespace Sowren\LaravelUikit\Helpers;
 
-
 class MenuHelper
 {
     public static function isHeader($item)

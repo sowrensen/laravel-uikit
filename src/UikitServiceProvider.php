@@ -20,7 +20,6 @@ class UikitServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // $this->app->register(EventServiceProvider::class);
         $this->app->singleton(Uikit::class, function (Container $app) {
             return new Uikit($app);
         });

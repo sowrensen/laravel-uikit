@@ -3,8 +3,9 @@
 
 namespace Sowren\LaravelUikit\Menu\Filters;
 
-class ActiveFilter implements FilterInterface
+class HrefFilter implements FilterInterface
 {
+
     /**
      * @inheritDoc
      */
