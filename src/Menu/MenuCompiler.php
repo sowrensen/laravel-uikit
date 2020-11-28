@@ -27,6 +27,7 @@ class MenuCompiler
     public function add(...$items)
     {
         $transformedItems = $this->transformItems($items);
+        // dd($transformedItems);
         if (!empty($transformedItems)) {
             array_push($this->menu, ...$transformedItems);
         }
