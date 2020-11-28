@@ -10,6 +10,6 @@ class ActiveFilter implements FilterInterface
      */
     public function transform(array $item)
     {
-        // TODO: Implement transform() method.
+        return $item;
     }
 }

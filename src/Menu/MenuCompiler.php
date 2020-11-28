@@ -36,29 +36,29 @@ class MenuCompiler
     {
         return collect($items)
             ->filter(function ($item) {
-                return MenuHelper::isAllowed($item);
+                // Filter out disallowed items
+                return MenuHelper::isAllowed($item) && MenuHelper::isValidSidebarItem($item);
             })
             ->map(function ($item) {
+                // Apply filters only on allowed items
                 return $this->applyFilters($item);
-            });
+            })
+            ->toArray();
     }
 
     private function applyFilters($item)
     {
-        if (!is_array($item)) {
+        if (!is_array($item) || empty($this->filters)) {
             return $item;
         }
-
-        // if (!MenuHelper::isAllowed($item)) {
-        //     return $item;
-        // }
 
         foreach ($this->filters as $filter) {
             $item = $filter->transform($item);
         }
 
+        // In case if current menu has a submenu, transform them as well
         if (MenuHelper::isSubmenu($item)) {
-            $item['submenu'] = $this->transformItems($item);
+            $item['submenu'] = $this->transformItems($item['submenu']);
         }
 
         return $item;
