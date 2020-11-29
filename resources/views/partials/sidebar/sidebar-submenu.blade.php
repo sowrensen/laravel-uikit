@@ -1,4 +1,4 @@
-<li class="uk-parent">
+<li class="uk-parent {{ $item['submenu_class'] }}">
     <a href="#">
         @if(isset($item['icon']))
             <span class="uk-margin-small-right" uk-icon="icon: {{ $item['icon'] }}"></span>
