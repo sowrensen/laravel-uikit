@@ -13,7 +13,7 @@
     @include('uikit::partials.sidebar.sidebar-mobile')
 
     {{-- Grid layout for sidebar and main content --}}
-    <div uk-grid class="uk-grid-collapse uk-height-viewport">
+    <div uk-grid class="uk-grid-collapse uk-height-viewport uk-content">
 
         {{-- Sidebar in non-mobile displays --}}
         <aside class="uk-visible@m uk-sidebar {{ config('uikit.sidebar.theme', 'dark') == 'dark' ? 'uk-sidebar-dark uk-light' : 'uk-sidebar-light' }}"
@@ -28,7 +28,7 @@
             </div>
 
             {{-- Footer --}}
-            @include('uikit::partials.footer.footer-main')
+            @includeWhen(config('uikit.footer.enabled', false), 'uikit::partials.footer.footer-main')
         </div>
     </div>
 @endsection
