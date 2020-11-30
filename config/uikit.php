@@ -140,5 +140,5 @@ return [
         \Sowren\LaravelUikit\Menu\Filters\HrefFilter::class,
         \Sowren\LaravelUikit\Menu\Filters\ActiveFilter::class,
         \Sowren\LaravelUikit\Menu\Filters\ClassFilter::class,
-    ]
+    ],
 ];

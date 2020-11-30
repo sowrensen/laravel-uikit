@@ -56,15 +56,29 @@ class MenuCompiler
     private function transformItems($items)
     {
         return collect($items)
-            ->filter(function ($item) {
-                // Filter out disallowed items
-                return MenuHelper::isAllowed($item) && MenuHelper::isValidSidebarItem($item);
-            })
+            // Extract already disallowed items so
+            // that filters do not applied on them
+            ->filter($this->filterItem())
+            // Apply filters on each item
             ->map(function ($item) {
-                // Apply filters only on allowed items
                 return $this->applyFilters($item);
             })
+            // Run filter again, allowing any
+            // custom user defined filters to work
+            ->filter($this->filterItem())
             ->toArray();
+    }
+
+    /**
+     * Filter out disallowed items.
+     *
+     * @return \Closure
+     */
+    private function filterItem()
+    {
+        return function ($item) {
+            return MenuHelper::isAllowed($item) && MenuHelper::isValidSidebarItem($item);
+        };
     }
 
     /**

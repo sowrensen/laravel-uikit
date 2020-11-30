@@ -26,21 +26,8 @@ class UikitServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register all package resources.
-     *
-     * @return void
-     */
-    private function registerResources()
-    {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'uikit');
-        $this->registerViewComposer();
-        $this->registerEventListeners();
-    }
-
-    /**
      * Register package's publishable resources.
      *
-     * @return void
      */
     private function registerPublishing()
     {
@@ -50,10 +37,50 @@ class UikitServiceProvider extends ServiceProvider
     }
 
     /**
+     * @param  string  $path
+     * @return string
+     */
+    private function packagePath(string $path)
+    {
+        return __DIR__."/../{$path}";
+    }
+
+    /**
+     * Register all package resources.
+     *
+     * @return void
+     */
+    private function registerResources()
+    {
+        $this->registerViews();
+        $this->registerConfig();
+        $this->registerViewComposer();
+        $this->registerEventListeners();
+    }
+
+    /**
+     * Load package views.
+     *
+     */
+    private function registerViews()
+    {
+        $this->loadViewsFrom($this->packagePath('resources/views'), 'uikit');
+    }
+
+    /**
+     * Load package config file.
+     *
+     */
+    private function registerConfig()
+    {
+        $this->mergeConfigFrom($this->packagePath("config/uikit.php"), "uikit");
+    }
+
+    /**
      * Register the view composers.
      *
      */
-    public function registerViewComposer()
+    private function registerViewComposer()
     {
         \View::composer('uikit::page', UikitComposer::class);
     }
@@ -62,7 +89,7 @@ class UikitServiceProvider extends ServiceProvider
      * Register event listeners of this package.
      *
      */
-    public function registerEventListeners()
+    private function registerEventListeners()
     {
         $this->app->register(EventServiceProvider::class);
     }
