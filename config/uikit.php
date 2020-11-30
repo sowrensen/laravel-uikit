@@ -2,8 +2,6 @@
 
 return [
 
-    'icon_theme' => 'uikit',
-
     'title' => 'Laravel UIKit',
     'title_prefix' => '',
     'title_suffix' => ' &mdash; Laravel UIKit',
@@ -32,8 +30,9 @@ return [
         'background' => '#262626', // CSS linear-gradient acceptable
         'extra_classes' => 'uk-light',
         'logo' => [
+            // Set brand_logo before enabling this
             'enabled' => false,
-            'link' => '/',
+            'link' => '/home',
             'classes' => 'uk-logo uk-visible@m',
             'logo_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
@@ -41,7 +40,7 @@ return [
             // Define a method getAvatar() in User class that
             // should return the user's profile photo.
             'enabled' => true,
-            'icon' => 'user',
+            'icon' => 'gitter',
             'image_classes' => 'uk-border-circle',
         ]
     ],
@@ -97,6 +96,7 @@ return [
     ],
 
     'footer' => [
+        'enabled' => false,
         'background' => '#EAEAEA',
         'classes' => 'uk-padding uk-text-small uk-flex'
     ],

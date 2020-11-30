@@ -1,18 +1,9 @@
 @inject('helper', \Sowren\LaravelUikit\Helpers\MenuHelper)
 
-@if($helper->isHeader($item))
-    @include('uikit::partials.sidebar.sidebar-header')
-@endif
+@includeWhen($helper->isHeader($item), 'uikit::partials.sidebar.sidebar-header')
 
-@if($helper->isDivider($item))
-    @include('uikit::partials.sidebar.sidebar-divider')
-@endif
+@includeWhen($helper->isDivider($item), 'uikit::partials.sidebar.sidebar-divider')
 
-@if($helper->isSubmenu($item))
-    @include('uikit::partials.sidebar.sidebar-submenu')
-@endif
+@includeWhen($helper->isSubmenu($item), 'uikit::partials.sidebar.sidebar-submenu')
 
-@if($helper->isLink($item))
-    @include('uikit::partials.sidebar.sidebar-link')
-@endif
-
+@includeWhen($helper->isLink($item), 'uikit::partials.sidebar.sidebar-link')

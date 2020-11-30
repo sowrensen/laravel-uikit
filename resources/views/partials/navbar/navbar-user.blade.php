@@ -1,9 +1,6 @@
 @php($avatar = method_exists(auth()->user(), 'getAvatar') ? auth()->user()->getAvatar() : null)
 <li>
-    <a href="#">
-        <span class="uk-icon uk-margin-small-right"
-              uk-icon="icon: {{ config('uikit.navbar.user_section.icon', 'user') }}"></span>
-    </a>
+    <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="{{ config('uikit.navbar.user_section.icon') }}"></a>
 
     {{-- dropdown --}}
     <form uk-drop="pos: bottom-right"
