@@ -9,7 +9,7 @@ return [
     'title_suffix' => '::Laravel UIKit',
 
     'brand_name' => config('app.name'),
-    'brand_logo' => '/placeholders/cgit_logo.png',
+    'brand_logo' => null,
     'brand_logo_alt_text' => 'Laravel UIKit',
 
     // Accepts route only
@@ -18,7 +18,7 @@ return [
         'logout_route' => 'logout',
         'profile_route' => 'profile',
         'register_route' => 'register',
-        'password_reset'=> 'password.request',
+        'password_reset' => 'password.request',
         'password_email' => 'password.email'
     ],
 
@@ -32,16 +32,16 @@ return [
         'background' => '#262626', // CSS linear-gradient acceptable
         'extra_classes' => 'uk-light',
         'logo' => [
+            'enabled' => false,
             'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
-            'display_image' => true,
-            'image_classes' => 'uk-margin-small-right uk-border-rounded',
+            'logo_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
         'user_section' => [
             // Define a method getAvatar() in User class that
             // should return the user's profile photo.
             'enabled' => true,
-            // Applicable for both images (navbar and dropdown card)
+            'icon' => 'user',
             'image_classes' => 'uk-border-circle',
         ]
     ],
@@ -53,80 +53,45 @@ return [
         // $offcanvas-bar-color-mode: dark;
         'theme' => 'dark',
         'menu' => [
-            ['header' => 'Header 1'],
+            ['header' => 'General'],
             [
-                'text' => 'Active',
-                'icon' => 'thumbnails',
-                'url' => '#',
+                'text' => 'Dashboard',
+                'url' => '/',
                 'roles' => [],
-                'attribute' => 'uk-modal',
+                'attributes' => '',
                 'id' => ''
             ],
             [
-                'text' => 'Parent 1',
-                'icon' => 'thumbnails',
+                'text' => 'Accounts',
                 'roles' => [],
                 'submenu' => [
                     [
-                        'text' => 'Sub Item',
-                        'url' => '#',
-                        'roles' => [],
-                        'label' => '100',
+                        'text' => 'Profile',
+                        'url' => 'profile',
                     ],
                     [
-                        'text' => 'Sub Item Parent',
-                        'roles' => [],
-                        'submenu' => [
-                            [
-                                'text' => 'Sub-sub Item 1',
-                                'url' => 'profile',
-                                'roles' => [],
-                            ],
-                            [
-                                'text' => 'Sub-sub Item 2',
-                                'url' => '#',
-                                'roles' => []
-                            ]
-                        ]
-                    ]
-                ]
-            ],
-            [
-                'text' => 'Parent 2',
-                'icon' => 'thumbnails',
-                'roles' => [],
-                'submenu' => [
-                    [
-                        'text' => 'Sub Item 1',
+                        'text' => 'Change Avatar',
                         'url' => '#',
-                        'roles' => [],
-                    ],
-                    [
-                        'text' => 'Sub Item 2',
-                        'url' => '#',
-                        'roles' => []
                     ],
                 ]
             ],
-            ['header' => 'Header 2'],
+            ['header' => 'Administrative'],
             [
-                'text' => 'Item 1',
-                'icon' => 'table',
+                'text' => 'Media Library',
+                'icon' => 'image',
                 'url' => '#',
-                'roles' => []
             ],
             [
-                'text' => 'Item 1',
-                'icon' => 'thumbnails',
+                'text' => 'History',
+                'icon' => 'history',
                 'url' => '#',
-                'roles' => []
             ],
             ['divider' => true],
             [
-                'text' => 'Item 3',
-                'icon' => 'trash',
+                'text' => 'Preferences',
+                'icon' => 'settings',
                 'url' => '#',
-                'roles' => [],
+                'roles' => ['admin']
             ],
         ]
     ],

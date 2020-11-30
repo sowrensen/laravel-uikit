@@ -1,13 +1,8 @@
 @php($avatar = method_exists(auth()->user(), 'getAvatar') ? auth()->user()->getAvatar() : null)
 <li>
     <a href="#">
-        @if($avatar)
-            <img data-src="{{ asset($avatar) }}"
-                 class="{{ config('uikit.navbar.user_section.image_classes') }}"
-                 width="25" height="25" alt="{{ auth()->user()->name }}" uk-img>
-        @else
-            {{ auth()->user()->name }}
-        @endif
+        <span class="uk-icon uk-margin-small-right"
+              uk-icon="icon: {{ config('uikit.navbar.user_section.icon', 'user') }}"></span>
     </a>
 
     {{-- dropdown --}}
@@ -17,8 +12,8 @@
             <div class="uk-card-body">
                 <div class="uk-flex uk-flex-column uk-flex-center uk-flex-middle">
                     @if($avatar)
-                        <img data-src="{{ asset($avatar) }}" width="70" height="70"
-                             class="{{ config('uikit.navbar.user_section.image_classes') }}"
+                        <img data-src="{{ asset($avatar) }}"
+                             class="user-menu-avatar {{ config('uikit.navbar.user_section.image_classes') }}"
                              alt="{{ auth()->user()->name }}" uk-img>
                     @endif
                     <div class="uk-text-large">{{ auth()->user()->name }}</div>

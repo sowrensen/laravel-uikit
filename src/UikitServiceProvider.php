@@ -18,22 +18,16 @@ class UikitServiceProvider extends ServiceProvider
         $this->registerResources();
     }
 
+    /**
+     * Register UIKit singleton.
+     *
+     * @return void
+     */
     public function register()
     {
         $this->app->singleton(Uikit::class, function (Container $app) {
             return new Uikit($app);
         });
-    }
-
-    /**
-     * Register package's publishable resources.
-     *
-     */
-    private function registerPublishing()
-    {
-        $this->publishes([
-            __DIR__.'/../config/uikit.php' => config_path('uikit.php'),
-        ], 'laravel-uikit-config');
     }
 
     /**
@@ -43,6 +37,21 @@ class UikitServiceProvider extends ServiceProvider
     private function packagePath(string $path)
     {
         return __DIR__."/../{$path}";
+    }
+
+    /**
+     * Register package's publishable resources.
+     *
+     */
+    private function registerPublishing()
+    {
+        $this->publishes([
+            $this->packagePath('config/uikit.php') => config_path('uikit.php'),
+        ], 'uikit-config');
+
+        $this->publishes([
+            $this->packagePath('resources/views') => resource_path('views/vendor/uikit'),
+        ], 'uikit-views');
     }
 
     /**
