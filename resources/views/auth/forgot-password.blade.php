@@ -3,7 +3,8 @@
 @section('title', 'Forgot Password')
 
 @section('auth_content')
-    <form action="{{ route(config('uikit.routes.password_email')) }}" method="post">
+    <form action="{{ \Route::has(config('uikit.routes.password_email')) ? route(config('uikit.routes.password_email')) : '#' }}"
+          method="post">
         @csrf
         <div class="uk-card-body">
             <p class="uk-text-meta">Oops! Seems that you've forgotten your password. No worry, just tell us your email
@@ -22,7 +23,8 @@
         </div>
         <div class="uk-card-footer uk-flex uk-flex-between uk-flex-middle">
             <button type="submit" class="uk-button uk-button-secondary uk-text-bold">Send Link</button>
-            <a href="{{ route(config('uikit.routes.login_route')) }}" class="uk-link-muted uk-text-small">Login</a>
+            <a href="{{ \Route::has(config('uikit.routes.login_route')) ? route(config('uikit.routes.login_route')) : '#' }}"
+               class="uk-link-muted uk-text-small">Login</a>
         </div>
     </form>
 @endsection

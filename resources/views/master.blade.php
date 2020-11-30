@@ -8,7 +8,7 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('uikit.title_prefix') }}@yield('title', config('uikit.title')){{ config('uikit.title_suffix') }}</title>
+    <title>{!! config('uikit.title_prefix') !!}@yield('title', config('uikit.title')){!! config('uikit.title_suffix') !!}</title>
 
     {{-- Styles --}}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

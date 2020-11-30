@@ -2,11 +2,11 @@
 
 return [
 
-    'icon_theme' => 'uikit', // material
+    'icon_theme' => 'uikit',
 
     'title' => 'Laravel UIKit',
     'title_prefix' => '',
-    'title_suffix' => '::Laravel UIKit',
+    'title_suffix' => ' &mdash; Laravel UIKit',
 
     'brand_name' => config('app.name'),
     'brand_logo' => null,

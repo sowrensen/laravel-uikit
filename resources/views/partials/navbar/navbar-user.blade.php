@@ -6,7 +6,9 @@
     </a>
 
     {{-- dropdown --}}
-    <form uk-drop="pos: bottom-right" action="{{ route(config('uikit.routes.logout_route')) }}" method="post">
+    <form uk-drop="pos: bottom-right"
+          action="{{ \Route::has(config('uikit.routes.logout_route'))  ? route(config('uikit.routes.logout_route')) : '#'}}"
+          method="post">
         @csrf
         <div class="uk-card uk-card-default">
             <div class="uk-card-body">
@@ -21,7 +23,7 @@
             </div>
             <div class="uk-card-footer uk-padding-small">
                 <div class="uk-flex uk-flex-between uk-flex-middle">
-                    <a href="{{ route(config('uikit.routes.profile_route')) }}"
+                    <a href="{{ \Route::has(config('uikit.routes.profile_route')) ? route(config('uikit.routes.profile_route')) : '#' }}"
                        class="uk-button uk-button-small uk-button-primary">
                         Profile
                     </a>

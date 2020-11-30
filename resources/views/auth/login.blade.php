@@ -3,7 +3,8 @@
 @section('title', 'Login')
 
 @section('auth_content')
-    <form action="{{ route(config('uikit.routes.login_route')) }}" method="post">
+    <form action="{{ \Route::has(config('uikit.routes.login_route')) ? route(config('uikit.routes.login_route')) : '#' }}"
+          method="post">
         @csrf
         <div class="uk-card-body uk-padding-remove-bottom">
             <div class="uk-form-horizontal">
@@ -43,9 +44,9 @@
         <div class="uk-card-footer uk-flex uk-flex-between uk-flex-middle">
             <button type="submit" class="uk-button uk-button-danger uk-text-bold">Login</button>
             <div class="uk-flex uk-flex-column">
-                <a href="{{ route(config('uikit.routes.register_route')) }}"
+                <a href="{{ \Route::has(config('uikit.routes.register_route')) ? route(config('uikit.routes.register_route')) : '#' }}"
                    class="uk-link-muted uk-text-small">I don't have an account</a>
-                <a href="{{ route(config('uikit.routes.password_reset')) }}"
+                <a href="{{ \Route::has(config('uikit.routes.password_reset')) ? route(config('uikit.routes.password_reset')) : '#' }}"
                    class="uk-link-muted uk-text-small">Forgot password?</a>
             </div>
         </div>

@@ -3,7 +3,8 @@
 @section('title', 'Register')
 
 @section('auth_content')
-    <form action="{{ route(config('uikit.routes.register_route')) }}" method="post">
+    <form action="{{ \Route::has(config('uikit.routes.register_route')) ? route(config('uikit.routes.register_route')) : '#' }}"
+          method="post">
         @csrf
         <div class="uk-card-body">
             <div class="uk-form-horizontal">
@@ -56,7 +57,8 @@
         </div>
         <div class="uk-card-footer uk-flex uk-flex-between uk-flex-middle">
             <button type="submit" class="uk-button uk-button-secondary uk-text-bold">Register</button>
-            <a href="{{ route(config('uikit.routes.login_route')) }}" class="uk-link-muted uk-text-small">I already have
+            <a href="{{ \Route::has(config('uikit.routes.login_route')) ? route(config('uikit.routes.login_route')) : '#' }}"
+               class="uk-link-muted uk-text-small">I already have
                 an account</a>
         </div>
     </form>
