@@ -1,4 +1,4 @@
-<li class="{{ $item['class'] }}">
+<li @if(isset($item['class']) && !empty($item['class'])) class="{{ $item['class'] }}" @endif>
     <a href="{{ $item['href'] }}"
        @if(isset($item['attributes'])) {{ $item['attributes'] }} @endif
        @if(isset($item['target'])) target="{{ $item['target'] }}" @endif

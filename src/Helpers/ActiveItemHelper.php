@@ -33,7 +33,7 @@ class ActiveItemHelper
             'active' => [$this, 'isExplicitlyActive'],
             'href' => [$this, 'matchPattern'],
             'url' => [$this, 'matchPattern'],
-            'route' => [$this, 'routeIs']
+            'route' => [$this, 'matchRoute']
         ];
     }
 
@@ -116,10 +116,10 @@ class ActiveItemHelper
     /**
      * Match a route attribute against current route.
      *
-     * @param $route
+     * @param  mixed  $route
      * @return bool
      */
-    public function routeIs($route)
+    public function matchRoute($route)
     {
         if (is_array($route)) {
             return $this->request->routeIs($route[0]);

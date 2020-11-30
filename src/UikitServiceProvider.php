@@ -58,6 +58,10 @@ class UikitServiceProvider extends ServiceProvider
         \View::composer('uikit::page', UikitComposer::class);
     }
 
+    /**
+     * Register event listeners of this package.
+     *
+     */
     public function registerEventListeners()
     {
         $this->app->register(EventServiceProvider::class);
