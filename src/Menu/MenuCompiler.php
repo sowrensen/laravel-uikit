@@ -7,8 +7,18 @@ use Sowren\LaravelUikit\Helpers\MenuHelper;
 
 class MenuCompiler
 {
+    /**
+     * The sidebar menu items.
+     *
+     * @var array
+     */
     private $menu = [];
 
+    /**
+     * Filters to be applied on menu items.
+     *
+     * @var
+     */
     private $filters;
 
     public function __construct($filters)
@@ -24,15 +34,25 @@ class MenuCompiler
         return $this->menu;
     }
 
+    /**
+     * Add new items to the sidebar menu.
+     *
+     * @param  mixed  ...$items
+     */
     public function add(...$items)
     {
         $transformedItems = $this->transformItems($items);
-        // dd($transformedItems);
         if (!empty($transformedItems)) {
             array_push($this->menu, ...$transformedItems);
         }
     }
 
+    /**
+     * Transform sidebar menu items by applying the filters.
+     *
+     * @param $items
+     * @return array
+     */
     private function transformItems($items)
     {
         return collect($items)
@@ -47,6 +67,12 @@ class MenuCompiler
             ->toArray();
     }
 
+    /**
+     * Apply filters on sidebar menu items.
+     *
+     * @param $item
+     * @return array
+     */
     private function applyFilters($item)
     {
         if (!is_array($item) || empty($this->filters)) {

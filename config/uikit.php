@@ -22,6 +22,12 @@ return [
         'password_email' => 'password.email'
     ],
 
+    'auth' => [
+        'heading_classes' => 'uk-heading-line',
+        'heading_image_classes' => 'uk-border-circle uk-padding-small',
+        'card_classes' => 'uk-card-default uk-background-muted',
+    ],
+
     'navbar' => [
         'background' => '#262626', // CSS linear-gradient acceptable
         'extra_classes' => 'uk-light',
@@ -51,7 +57,7 @@ return [
             [
                 'text' => 'Active',
                 'icon' => 'thumbnails',
-                'route' => '#',
+                'url' => '#',
                 'roles' => [],
                 'attribute' => 'uk-modal',
                 'id' => ''
@@ -63,9 +69,9 @@ return [
                 'submenu' => [
                     [
                         'text' => 'Sub Item',
-                        'route' => '#',
+                        'url' => '#',
                         'roles' => [],
-                        'label' => '100'
+                        'label' => '100',
                     ],
                     [
                         'text' => 'Sub Item Parent',
@@ -73,12 +79,12 @@ return [
                         'submenu' => [
                             [
                                 'text' => 'Sub-sub Item 1',
-                                'route' => '#',
-                                'roles' => []
+                                'url' => 'profile',
+                                'roles' => [],
                             ],
                             [
                                 'text' => 'Sub-sub Item 2',
-                                'route' => '#',
+                                'url' => '#',
                                 'roles' => []
                             ]
                         ]
@@ -92,12 +98,12 @@ return [
                 'submenu' => [
                     [
                         'text' => 'Sub Item 1',
-                        'route' => '#',
-                        'roles' => []
+                        'url' => '#',
+                        'roles' => [],
                     ],
                     [
                         'text' => 'Sub Item 2',
-                        'route' => '#',
+                        'url' => '#',
                         'roles' => []
                     ],
                 ]
@@ -106,21 +112,21 @@ return [
             [
                 'text' => 'Item 1',
                 'icon' => 'table',
-                'route' => '#',
+                'url' => '#',
                 'roles' => []
             ],
             [
                 'text' => 'Item 1',
                 'icon' => 'thumbnails',
-                'route' => '#',
+                'url' => '#',
                 'roles' => []
             ],
             ['divider' => true],
             [
                 'text' => 'Item 3',
                 'icon' => 'trash',
-                'route' => '#',
-                'roles' => []
+                'url' => '#',
+                'roles' => [],
             ],
         ]
     ],
@@ -128,5 +134,11 @@ return [
     'footer' => [
         'background' => '#EAEAEA',
         'classes' => 'uk-padding uk-text-small uk-flex'
+    ],
+
+    'filters' => [
+        \Sowren\LaravelUikit\Menu\Filters\HrefFilter::class,
+        \Sowren\LaravelUikit\Menu\Filters\ActiveFilter::class,
+        \Sowren\LaravelUikit\Menu\Filters\ClassFilter::class,
     ]
 ];
