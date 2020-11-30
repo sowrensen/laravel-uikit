@@ -32,14 +32,15 @@ class ActiveItemHelper
             'submenu' => [$this, 'containsActive'],
             'active' => [$this, 'isExplicitlyActive'],
             'href' => [$this, 'matchPattern'],
-            'url' => [$this, 'matchPattern']
+            'url' => [$this, 'matchPattern'],
+            'route' => [$this, 'routeIs']
         ];
     }
 
     /**
      * Check if a menu item is active or has active submenu.
      *
-     * @param array $item
+     * @param  array  $item
      * @return bool
      */
     public function isActive(array $item)
@@ -56,7 +57,7 @@ class ActiveItemHelper
     /**
      * Check if a menu item contains active submenu.
      *
-     * @param array $items
+     * @param  array  $items
      * @return bool
      */
     public function containsActive(array $items)
@@ -93,7 +94,7 @@ class ActiveItemHelper
     /**
      * Match a pattern with the current request url.
      *
-     * @param mixed $pattern
+     * @param  mixed  $pattern
      * @return bool
      */
     public function matchPattern($pattern)
@@ -104,12 +105,25 @@ class ActiveItemHelper
         }
 
         $pattern = preg_replace('@^https?://@', '*', $this->url->to($pattern));
-        $request = $this->request->url();
-
+        $request = preg_replace('@^https?://@', '*', $this->request->url());
         if (isset(parse_url($pattern)['query'])) {
             $request = $this->request->fullUrl();
         }
 
         return Str::is(trim($pattern), trim($request));
+    }
+
+    /**
+     * Match a route attribute against current route.
+     *
+     * @param $route
+     * @return bool
+     */
+    public function routeIs($route)
+    {
+        if (is_array($route)) {
+            return $this->request->routeIs($route[0]);
+        }
+        return $this->request->routeIs($route);
     }
 }
