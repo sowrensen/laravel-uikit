@@ -67,7 +67,7 @@ return [
                 'submenu' => [
                     [
                         'text' => 'Profile',
-                        'url' => 'profile',
+                        'url' => '#',
                     ],
                     [
                         'text' => 'Change Avatar',
