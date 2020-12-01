@@ -6,28 +6,16 @@
  */
 
 class LaravelUikit {
-  constructor (variant='dark') {
-    this.variant = variant
-    this.toggleSidebar()
-    this.initializeOverlayScrollbar()
+  constructor () {
+    this.registerSidebarToggleEventListener()
   }
 
-  toggleSidebar () {
-    $('#sidebar-toggler').click(function (e) {
-      let wrapper = $('#wrapper')
-      wrapper.toggleClass('extra-padding')
-    })
-  }
-
-  initializeOverlayScrollbar () {
-    $('#sidebar').overlayScrollbars({
-      className: `os-theme-${this.variant}`,
-      sizeAutoCapable: true,
-      scrollbars: {
-        autoHide: 'leave',
-        clickScrolling: true
-      }
-    })
+  registerSidebarToggleEventListener () {
+    document.getElementById('sidebar-toggler')
+      .addEventListener('click', function (e) {
+        let wrapper = document.getElementById('wrapper')
+        wrapper.classList.toggle('extra-padding')
+      })
   }
 }
 

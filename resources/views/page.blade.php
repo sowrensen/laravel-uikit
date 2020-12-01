@@ -17,7 +17,7 @@
 
         {{-- Sidebar in non-mobile displays --}}
         <aside class="uk-visible@m uk-sidebar {{ config('uikit.sidebar.theme', 'dark') == 'dark' ? 'uk-sidebar-dark uk-light' : 'uk-sidebar-light' }}"
-               id="sidebar">
+               id="sidebar" data-simplebar>
             @include('uikit::partials.sidebar.sidebar-main')
         </aside>
 

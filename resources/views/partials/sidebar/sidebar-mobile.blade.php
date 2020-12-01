@@ -2,6 +2,8 @@
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-        @include('uikit::partials.sidebar.sidebar-main')
+        <div data-simplebar data-simplebar-auto-hide="false">
+            @include('uikit::partials.sidebar.sidebar-main')
+        </div>
     </div>
 </div>

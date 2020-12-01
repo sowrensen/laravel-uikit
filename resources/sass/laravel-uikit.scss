@@ -7,13 +7,16 @@
 
 @import "variables";
 
+.simplebar-scrollbar::before {
+  background-color: #919191;
+}
+
 .uk-sidebar {
   width: 210px;
   padding: 20px;
   position: fixed;
   top: 80px;
   bottom: 0;
-  overflow: auto;
   z-index: 9999;
 }
 
