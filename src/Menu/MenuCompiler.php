@@ -21,12 +21,19 @@ class MenuCompiler
      */
     private $filters;
 
+    /**
+     * MenuCompiler constructor.
+     *
+     * @param $filters
+     */
     public function __construct($filters)
     {
         $this->filters = $filters;
     }
 
     /**
+     * Get the processed menu items.
+     *
      * @return array
      */
     public function getMenu()

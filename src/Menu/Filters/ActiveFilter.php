@@ -9,10 +9,17 @@ use Sowren\LaravelUikit\Helpers\ActiveItemHelper;
 class ActiveFilter implements FilterInterface
 {
     /**
+     * The helper class instance.
+     *
      * @var ActiveItemHelper
      */
     private $activeItemHelper;
 
+    /**
+     * ActiveFilter constructor.
+     *
+     * @param  ActiveItemHelper  $activeItemHelper
+     */
     public function __construct(ActiveItemHelper $activeItemHelper)
     {
         $this->activeItemHelper = $activeItemHelper;

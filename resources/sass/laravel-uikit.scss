@@ -8,7 +8,7 @@
 @import "variables";
 
 .simplebar-scrollbar::before {
-  background-color: #919191;
+  background-color: $scrollbar-color;
 }
 
 .uk-sidebar {

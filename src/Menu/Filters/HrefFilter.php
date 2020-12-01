@@ -9,10 +9,17 @@ use Illuminate\Contracts\Routing\UrlGenerator;
 class HrefFilter implements FilterInterface
 {
     /**
+     * The url generator instance.
+     *
      * @var UrlGenerator
      */
     private $urlGenerator;
 
+    /**
+     * HrefFilter constructor.
+     *
+     * @param  UrlGenerator  $urlGenerator
+     */
     public function __construct(UrlGenerator $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;

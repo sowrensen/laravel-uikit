@@ -31,6 +31,8 @@ class UikitServiceProvider extends ServiceProvider
     }
 
     /**
+     * Get any specified file/directory path within the package.
+     *
      * @param  string  $path
      * @return string
      */
@@ -42,6 +44,7 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Register package's publishable resources.
      *
+     * @return void
      */
     private function registerPublishing()
     {
@@ -70,6 +73,7 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Load package views.
      *
+     * @return void
      */
     private function registerViews()
     {
@@ -79,6 +83,7 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Load package config file.
      *
+     * @return void
      */
     private function registerConfig()
     {
@@ -88,6 +93,7 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Register the view composers.
      *
+     * @return void
      */
     private function registerViewComposer()
     {
@@ -97,6 +103,7 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Register event listeners of this package.
      *
+     * @return void
      */
     private function registerEventListeners()
     {

@@ -10,16 +10,22 @@ use Illuminate\Contracts\Routing\UrlGenerator;
 class ActiveItemHelper
 {
     /**
+     * The url generator instance.
+     *
      * @var UrlGenerator
      */
     public $url;
 
     /**
+     * Current request instance.
+     *
      * @var Request
      */
     public $request;
 
     /**
+     * List of checkers.
+     *
      * @var array|array[]
      */
     public $checkers = [];
