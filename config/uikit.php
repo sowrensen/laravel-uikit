@@ -32,7 +32,7 @@ return [
         'logo' => [
             // Set brand_logo before enabling this
             'enabled' => false,
-            'link' => '/home',
+            'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
             'logo_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
@@ -96,7 +96,7 @@ return [
     ],
 
     'footer' => [
-        'enabled' => false,
+        'enabled' => true,
         'background' => '#EAEAEA',
         'classes' => 'uk-padding uk-text-small uk-flex'
     ],
