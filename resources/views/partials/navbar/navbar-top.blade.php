@@ -1,3 +1,4 @@
+
 <div uk-sticky>
     <nav class="uk-navbar-container uk-container-expand {{ config('uikit.navbar.extra_classes') }}" uk-navbar
          style="background: {{ config('uikit.navbar.background', '#262626') }}">
@@ -20,7 +21,7 @@
                class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
                 @if(config('uikit.navbar.logo.enabled', false))
                     <img src="{{ asset(config('uikit.brand_logo')) }}"
-                         class="navbar-logo {{ config('uikit.navbar.logo.logo_classes') }}"
+                         class="navbar-logo {{ config('uikit.navbar.logo.img_classes') }}"
                          alt="{{ config('uikit.brand_logo_alt_text') }}">
                 @endif
                 {{ config('uikit.brand_name') }}

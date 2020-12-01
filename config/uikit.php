@@ -2,15 +2,41 @@
 
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application title
+    |--------------------------------------------------------------------------
+    |
+    | Set default title, prefix, and suffix for your application.
+    |
+    */
     'title' => 'Laravel UIKit',
     'title_prefix' => '',
     'title_suffix' => ' &mdash; Laravel UIKit',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Brand name and logo
+    |--------------------------------------------------------------------------
+    |
+    | Set brand name and logo for your application.
+    |
+    */
     'brand_name' => config('app.name'),
     'brand_logo' => null,
     'brand_logo_alt_text' => 'Laravel UIKit',
 
-    // Accepts route only
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication routes
+    |--------------------------------------------------------------------------
+    |
+    | Set names of your auth routes.
+    |
+    | By default these are Laravel 8 route names. Note that, only
+    | route names are allowed, not URLs.
+    |
+    */
     'routes' => [
         'login_route' => 'login',
         'logout_route' => 'logout',
@@ -20,36 +46,71 @@ return [
         'password_email' => 'password.email'
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication view
+    |--------------------------------------------------------------------------
+    |
+    | Set classes for authentication views.
+    |
+    */
     'auth' => [
         'heading_classes' => 'uk-heading-line',
         'heading_image_classes' => 'uk-border-circle uk-padding-small',
         'card_classes' => 'uk-card-default uk-background-muted',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Top navigation bar
+    |--------------------------------------------------------------------------
+    |
+    | Configure the tob navigation bar of your application.
+    |
+    */
     'navbar' => [
-        'background' => '#262626', // CSS linear-gradient acceptable
+        'background' => '#262626',
         'extra_classes' => 'uk-light',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Navbar brand
+        |--------------------------------------------------------------------------
+        |
+        | Configure brand and logo display on the navigation bar.
+        |
+        */
         'logo' => [
-            // Set brand_logo before enabling this
             'enabled' => false,
             'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
-            'logo_classes' => 'uk-margin-small-right uk-border-rounded',
+            'img_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Navbar user section
+        |--------------------------------------------------------------------------
+        |
+        | Configure the user section of navigation bar.
+        |
+        */
         'user_section' => [
-            // Define a method getAvatar() in User class that
-            // should return the user's profile photo.
             'enabled' => true,
-            'icon' => 'gitter',
+            'icon' => 'user',
             'image_classes' => 'uk-border-circle',
         ]
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Main navigation drawer
+    |--------------------------------------------------------------------------
+    |
+    | Configure your sidebar/navigation drawer theme and menu items.
+    |
+    */
     'sidebar' => [
-        // NOTE: Light theme is only applicable for desktop views, for changing the
-        // theme color on mobile, you have to set following variables in your _variables.scss.
-        // $offcanvas-bar-background: #F7F7F7;
-        // $offcanvas-bar-color-mode: dark;
         'theme' => 'dark',
         'menu' => [
             ['header' => 'General'],
@@ -95,15 +156,31 @@ return [
         ]
     ],
 
-    'footer' => [
-        'enabled' => true,
-        'background' => '#EAEAEA',
-        'classes' => 'uk-padding uk-text-small uk-flex'
-    ],
-
+    /*
+    |--------------------------------------------------------------------------
+    | Navigation drawer menu filters
+    |--------------------------------------------------------------------------
+    |
+    | Set filter classes that are applied on sidebar menu items.
+    |
+    */
     'filters' => [
         \Sowren\LaravelUikit\Menu\Filters\HrefFilter::class,
         \Sowren\LaravelUikit\Menu\Filters\ActiveFilter::class,
         \Sowren\LaravelUikit\Menu\Filters\ClassFilter::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | The footer section
+    |--------------------------------------------------------------------------
+    |
+    | Set the background and classes for the footer of your application.
+    |
+    */
+    'footer' => [
+        'enabled' => false,
+        'background' => '#EAEAEA',
+        'classes' => 'uk-padding uk-text-small uk-flex'
     ],
 ];
