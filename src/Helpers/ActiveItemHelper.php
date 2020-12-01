@@ -14,21 +14,21 @@ class ActiveItemHelper
      *
      * @var UrlGenerator
      */
-    public $url;
+    private $url;
 
     /**
      * Current request instance.
      *
      * @var Request
      */
-    public $request;
+    private $request;
 
     /**
      * List of checkers.
      *
      * @var array|array[]
      */
-    public $checkers = [];
+    private $checkers = [];
 
     public function __construct(UrlGenerator $urlGenerator)
     {
@@ -66,7 +66,7 @@ class ActiveItemHelper
      * @param  array  $items
      * @return bool
      */
-    public function containsActive(array $items)
+    private function containsActive(array $items)
     {
         foreach ($items as $item) {
             if ($this->isActive($item)) {
@@ -82,7 +82,7 @@ class ActiveItemHelper
      * @param  mixed  $patterns
      * @return bool
      */
-    public function isExplicitlyActive($patterns)
+    private function isExplicitlyActive($patterns)
     {
         if (is_bool($patterns)) {
             return $patterns;
@@ -103,7 +103,7 @@ class ActiveItemHelper
      * @param  mixed  $pattern
      * @return bool
      */
-    public function matchPattern($pattern)
+    private function matchPattern($pattern)
     {
         if (Str::startsWith($pattern, 'regex:')) {
             $regex = Str::substr($pattern, 6);
@@ -125,7 +125,7 @@ class ActiveItemHelper
      * @param  mixed  $route
      * @return bool
      */
-    public function matchRoute($route)
+    private function matchRoute($route)
     {
         if (is_array($route)) {
             return $this->request->routeIs($route[0]);
