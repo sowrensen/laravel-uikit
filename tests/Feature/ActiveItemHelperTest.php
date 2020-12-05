@@ -3,28 +3,10 @@
 
 namespace Sowren\LaravelUikit\Test\Feature;
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
 use Sowren\LaravelUikit\Test\TestCase;
-use Illuminate\Routing\RouteCollection;
-use Sowren\LaravelUikit\Helpers\ActiveItemHelper;
-use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class ActiveItemHelperTest extends TestCase
 {
-    public function makeUrlGenerator($uri = "http://example.com")
-    {
-        return new UrlGenerator(
-            new RouteCollection(),
-            Request::createFromBase(SymfonyRequest::create($uri))
-        );
-    }
-
-    public function makeActiveItemHelper($uri = "http://example.com")
-    {
-        return new ActiveItemHelper($this->makeUrlGenerator($uri));
-    }
-
     /** @test */
     public function testItemWithUrl()
     {
@@ -103,5 +85,14 @@ class ActiveItemHelperTest extends TestCase
     {
         $activeHelper = $this->makeActiveItemHelper('http://example.com/users/4/profile');
         $this->assertFalse($activeHelper->isActive(['active' => ['/something/else']]));
+    }
+
+    /** @test */
+    public function testMultiLevelSubMenu()
+    {
+        $activeHelper = $this->makeActiveItemHelper('http://example.com/profile');
+        $this->assertTrue($activeHelper->isActive([
+            'submenu' => [['submenu' => [['url' => 'profile',]]]]
+        ]));
     }
 }

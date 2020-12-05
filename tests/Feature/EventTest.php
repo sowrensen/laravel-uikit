@@ -21,7 +21,7 @@ class EventTest extends TestCase
     }
 
     /** @test */
-    public function testListenerIsWorking()
+    public function testEventHasBeenListened()
     {
         $uikit = $this->app->make(Uikit::class);
         $menu = $uikit->menu();
