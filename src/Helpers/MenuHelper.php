@@ -13,7 +13,7 @@ class MenuHelper
      */
     public static function isHeader($item)
     {
-        return is_string($item) || isset($item['header']);
+        return isset($item['header']);
     }
 
     /**

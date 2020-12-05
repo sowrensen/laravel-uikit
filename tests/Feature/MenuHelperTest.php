@@ -11,10 +11,8 @@ class MenuHelperTest extends TestCase
     /** @test */
     public function testIsHeader()
     {
-        $item0 = ['header' => 'General'];
-        $item1 = 'General';
-        $this->assertTrue(MenuHelper::isHeader($item0));
-        $this->assertTrue(MenuHelper::isHeader($item1));
+        $item = ['header' => 'General'];
+        $this->assertTrue(MenuHelper::isHeader($item));
     }
 
     /** @test */

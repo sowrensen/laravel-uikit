@@ -88,6 +88,10 @@ class ActiveItemHelper
             return $patterns;
         }
 
+        if (is_string($patterns)) {
+            return $this->matchPattern($patterns);
+        }
+
         foreach ($patterns as $pattern) {
             if ($this->matchPattern($pattern)) {
                 return true;
