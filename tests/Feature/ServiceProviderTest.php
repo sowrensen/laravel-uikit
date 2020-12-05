@@ -5,7 +5,6 @@ namespace Sowren\LaravelUikit\Test\Feature;
 
 use Sowren\LaravelUikit\Uikit;
 use Sowren\LaravelUikit\Test\TestCase;
-use Sowren\LaravelUikit\Events\MenuCompiling;
 
 class ServiceProviderTest extends TestCase
 {

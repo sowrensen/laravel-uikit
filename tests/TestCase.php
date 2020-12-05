@@ -4,7 +4,6 @@
 namespace Sowren\LaravelUikit\Test;
 
 use Illuminate\Http\Request;
-use Sowren\LaravelUikit\Uikit;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Routing\RouteCollection;
 use Sowren\LaravelUikit\UikitServiceProvider;
@@ -14,16 +13,6 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class TestCase extends BaseTestCase
 {
-    // protected function makeUikit()
-    // {
-    //     return new Uikit($this->makeContainer());
-    // }
-    //
-    // protected function makeContainer()
-    // {
-    //     return new \Illuminate\Container\Container();
-    // }
-
     protected function getPackageProviders($app)
     {
         return [
