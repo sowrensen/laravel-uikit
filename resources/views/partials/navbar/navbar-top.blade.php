@@ -21,7 +21,7 @@
                class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
                 @if(config('uikit.navbar.logo.enabled', false))
                     <img src="{{ asset(config('uikit.brand_logo')) }}"
-                         class="navbar-logo {{ config('uikit.navbar.logo.img_classes') }}"
+                         class="navbar-logo {{ config('uikit.navbar.logo.image_classes') }}"
                          alt="{{ config('uikit.brand_logo_alt_text') }}">
                 @endif
                 {{ config('uikit.brand_name') }}

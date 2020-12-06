@@ -101,7 +101,7 @@ return [
             'enabled' => false,
             'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
-            'img_classes' => 'uk-margin-small-right uk-border-rounded',
+            'image_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
 
         /*
