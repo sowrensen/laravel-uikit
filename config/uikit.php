@@ -10,6 +10,7 @@ return [
     | Set default title, prefix, and suffix for your application.
     |
     */
+
     'title' => 'Laravel UIKit',
     'title_prefix' => '',
     'title_suffix' => ' &mdash; Laravel UIKit',
@@ -22,9 +23,21 @@ return [
     | Set brand name and logo for your application.
     |
     */
+
     'brand_name' => config('app.name'),
     'brand_logo' => null,
     'brand_logo_alt_text' => 'Laravel UIKit',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application favicon
+    |--------------------------------------------------------------------------
+    |
+    | Set favicon for the application.
+    |
+    */
+
+    'favicon' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -37,6 +50,7 @@ return [
     | route names are allowed, not URLs.
     |
     */
+
     'routes' => [
         'login_route' => 'login',
         'logout_route' => 'logout',
@@ -54,6 +68,7 @@ return [
     | Set classes for authentication views.
     |
     */
+
     'auth' => [
         'heading_classes' => 'uk-heading-line',
         'heading_image_classes' => 'uk-border-circle uk-padding-small',
@@ -68,6 +83,7 @@ return [
     | Configure the tob navigation bar of your application.
     |
     */
+
     'navbar' => [
         'background' => '#262626',
         'extra_classes' => 'uk-light',
@@ -80,6 +96,7 @@ return [
         | Configure brand and logo display on the navigation bar.
         |
         */
+
         'logo' => [
             'enabled' => false,
             'link' => '/',
@@ -95,6 +112,7 @@ return [
         | Configure the user section of navigation bar.
         |
         */
+
         'user_section' => [
             'enabled' => true,
             'icon' => 'user',
@@ -110,6 +128,7 @@ return [
     | Configure your sidebar/navigation drawer theme and menu items.
     |
     */
+
     'sidebar' => [
         'theme' => 'dark',
         'menu' => [
@@ -164,6 +183,7 @@ return [
     | Set filter classes that are applied on sidebar menu items.
     |
     */
+
     'filters' => [
         \Sowren\LaravelUikit\Menu\Filters\HrefFilter::class,
         \Sowren\LaravelUikit\Menu\Filters\ActiveFilter::class,
@@ -178,6 +198,7 @@ return [
     | Set the background and classes for the footer of your application.
     |
     */
+
     'footer' => [
         'enabled' => false,
         'background' => '#EAEAEA',
