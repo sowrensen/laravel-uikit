@@ -10,6 +10,10 @@
 
     <title>{!! config('uikit.title_prefix') !!}@yield('title', config('uikit.title')){!! config('uikit.title_suffix') !!}</title>
 
+    @if(config('uikit.favicon', null))
+        <link rel="icon" href="{{ asset(config('uikit.favicon')) }}" type="image/x-icon"/>
+    @endif
+
     {{-- Styles --}}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
