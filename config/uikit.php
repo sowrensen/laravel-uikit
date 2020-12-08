@@ -9,6 +9,7 @@ return [
     |
     | Set default title, prefix, and suffix for your application.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#application-title
     */
 
     'title' => 'Laravel UIKit',
@@ -22,6 +23,7 @@ return [
     |
     | Set brand name and logo for your application.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#brand-name-and-logo
     */
 
     'brand_name' => config('app.name'),
@@ -35,6 +37,7 @@ return [
     |
     | Set favicon for the application.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#application-favicon
     */
 
     'favicon' => null,
@@ -49,6 +52,7 @@ return [
     | By default these are Laravel 8 route names. Note that, only
     | route names are allowed, not URLs.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Routes-and-Authentication-Views#routes
     */
 
     'routes' => [
@@ -67,6 +71,7 @@ return [
     |
     | Set classes for authentication views.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Routes-and-Authentication-Views#authentication-view
     */
 
     'auth' => [
@@ -82,6 +87,7 @@ return [
     |
     | Configure the tob navigation bar of your application.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Top-Navigation-Bar
     */
 
     'navbar' => [
@@ -95,6 +101,7 @@ return [
         |
         | Configure brand and logo display on the navigation bar.
         |
+        | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Top-Navigation-Bar#logo-subgroup
         */
 
         'logo' => [
@@ -111,6 +118,7 @@ return [
         |
         | Configure the user section of navigation bar.
         |
+        | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Top-Navigation-Bar#user-section-subgroup
         */
 
         'user_section' => [
@@ -127,6 +135,7 @@ return [
     |
     | Configure your sidebar/navigation drawer theme and menu items.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Sidebar
     */
 
     'sidebar' => [
@@ -182,6 +191,7 @@ return [
     |
     | Set filter classes that are applied on sidebar menu items.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Filters
     */
 
     'filters' => [
@@ -197,6 +207,7 @@ return [
     |
     | Set the background and classes for the footer of your application.
     |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Footer
     */
 
     'footer' => [

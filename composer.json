@@ -1,6 +1,6 @@
 {
     "name": "sowrensen/laravel-uikit",
-    "description": "A pre-built admin panel for Laravel Apps using UIKit",
+    "description": "An admin panel built with UIKit for Laravel applications.",
     "keywords": [
         "laravel",
         "adminpanel",

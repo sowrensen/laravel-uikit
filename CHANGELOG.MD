@@ -1,8 +1,8 @@
-# Package
+# Laravel UIKit
 
 Changelog
 ---
 
-##### Release 1.x
+##### Release 0.1.0
 
-- Nothing yet!
+- Initial release.

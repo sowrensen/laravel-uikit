@@ -70,7 +70,7 @@ class MenuCompiler
             ->map(function ($item) {
                 return $this->applyFilters($item);
             })
-            // Run filter again, allowing any
+            // Check item visibility again, allowing any
             // custom user defined filters to work
             ->filter($this->filterItem())
             ->toArray();

@@ -1,5 +1,10 @@
 @extends('uikit::master')
 
+@section('uikitstyles')
+    @stack('css')
+    @yield('css')
+@stop
+
 @section('body')
     <div class="uk-flex uk-height-viewport uk-flex-center uk-flex-middle">
         <div class="uk-width-1-3@xl uk-width-1-2@m">
@@ -10,3 +15,8 @@
         </div>
     </div>
 @endsection
+
+@section('uikitscripts')
+    @stack('js')
+    @yield('js')
+@stop
