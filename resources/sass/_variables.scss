@@ -10,3 +10,33 @@ $light: #F7F7F7;
 $sidebar-border-dark: #4E4E4E;
 $sidebar-border-light: #E5E5E5;
 $scrollbar-color: #919191;
+
+/**
+ * Success button
+ *
+ */
+$button-success-background: $global-success-background !default;
+$button-success-color: $global-inverse-color !default;
+$button-success-hover-background: darken($button-success-background, 5%) !default;
+$button-success-hover-color: $global-inverse-color !default;
+$button-success-active-background: darken($button-success-background, 10%) !default;
+$button-success-active-color: $global-inverse-color !default;
+
+/**
+ * Warning button
+ *
+ */
+$button-warning-background: $global-warning-background !default;
+$button-warning-color: $global-inverse-color !default;
+$button-warning-hover-background: darken($button-warning-background, 5%) !default;
+$button-warning-hover-color: $global-inverse-color !default;
+$button-warning-active-background: darken($button-warning-background, 10%) !default;
+$button-warning-active-color: $global-inverse-color !default;
+
+/**
+ * Custom backgrounds
+ *
+ */
+$background-success-background: $global-success-background !default;
+$background-warning-background: $global-warning-background !default;
+$background-danger-background: $global-danger-background !default;

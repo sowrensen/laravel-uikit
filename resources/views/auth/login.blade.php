@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="uk-card-footer uk-flex uk-flex-between uk-flex-middle">
-            <button type="submit" class="uk-button uk-button-danger uk-text-bold">Login</button>
+            <button type="submit" class="uk-button uk-button-secondary uk-text-bold">Login</button>
             <div class="uk-flex uk-flex-column">
                 <a href="{{ \Route::has(config('uikit.routes.register_route')) ? route(config('uikit.routes.register_route')) : '#' }}"
                    class="uk-link-muted uk-text-small">I don't have an account</a>

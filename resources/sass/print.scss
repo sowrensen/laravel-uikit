@@ -1,0 +1,42 @@
+/**
+ * Laravel-UIKit
+ *
+ * Author: Sowren Sen (sowrensen@gmail.com)
+ * Repository: https://github.com/sowrensen/laravel-uikit
+ */
+
+@media print {
+  .uk-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .uk-print-none {
+    display: none !important;
+  }
+  .uk-print-inline {
+    display: inline !important;
+  }
+  .uk-print-inline-block {
+    display: inline-block !important;
+  }
+  .uk-print-block {
+    display: block !important;
+  }
+  .uk-print-table {
+    display: table !important;
+  }
+  .uk-print-table-row {
+    display: table-row !important;
+  }
+  .uk-print-table-cell {
+    display: table-cell !important;
+  }
+  .uk-print-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .uk-print-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}

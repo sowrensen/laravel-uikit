@@ -1,0 +1,32 @@
+/**
+ * Laravel-UIKit
+ *
+ * Author: Sowren Sen (sowrensen@gmail.com)
+ * Repository: https://github.com/sowrensen/laravel-uikit
+ */
+
+.scroll-prevent {
+  margin-top: -80px;
+  padding-top: 80px
+}
+
+.ease-in-out {
+  transition: padding-left 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .extra-padding {
+    padding-left: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .extra-padding {
+    padding-left: 0;
+  }
+}
+
+.auth-heading-logo {
+  max-width: 90px;
+  max-height: 90px
+}
