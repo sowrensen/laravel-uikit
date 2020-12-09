@@ -7,12 +7,14 @@
 
 class LaravelUikit {
   constructor () {
-    this.registerSidebarToggleEventListener()
+    let element = document.getElementById('sidebar-toggler');
+    if (element) {
+      this.registerSidebarToggleEventListener(element)
+    }
   }
 
-  registerSidebarToggleEventListener () {
-    document.getElementById('sidebar-toggler')
-      .addEventListener('click', function (e) {
+  registerSidebarToggleEventListener (element) {
+    element.addEventListener('click', function (e) {
         let wrapper = document.getElementById('wrapper')
         wrapper.classList.toggle('extra-padding')
       })
