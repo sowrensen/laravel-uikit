@@ -10,6 +10,10 @@ For instructions on installation and configuration, please visit the [wiki secti
 
 For detail changelog [see here](CHANGELOG.MD).
 
+### Screenshots
+
+See [here](screenshots.md).
+
 ### Acknowledgment
 
 This package is heavily influenced by [Laravel-AdminLTE](https://github.com/jeroennoten/Laravel-AdminLTE). If you have used it before, you will find noticeable similarities between these two packages. However, there are significant differences too. **Laravel UIKit** is much more simplified and lightweight. This is because unlike Laravel-AdminLTE, this package provides only one layout, and some basic blade views with enough configurations one might need.
