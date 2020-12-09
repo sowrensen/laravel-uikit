@@ -19,7 +19,7 @@
             {{-- navbar-logo --}}
             <a href="{{ config('uikit.navbar.logo.link', '/') }}"
                class="uk-navbar-item {{ config('uikit.navbar.logo.classes') }}">
-                @if(config('uikit.navbar.logo.enabled', false))
+                @if(config('uikit.navbar.logo.display_image', false))
                     <img src="{{ asset(config('uikit.brand_logo')) }}"
                          class="navbar-logo {{ config('uikit.navbar.logo.image_classes') }}"
                          alt="{{ config('uikit.brand_logo_alt_text') }}">

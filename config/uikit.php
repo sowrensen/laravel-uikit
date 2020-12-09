@@ -105,9 +105,9 @@ return [
         */
 
         'logo' => [
-            'enabled' => false,
             'link' => '/',
             'classes' => 'uk-logo uk-visible@m',
+            'display_image' => false,
             'image_classes' => 'uk-margin-small-right uk-border-rounded',
         ],
 
@@ -168,6 +168,7 @@ return [
                 'text' => 'Media Library',
                 'icon' => 'image',
                 'url' => '#',
+                'label' => 5,
             ],
             [
                 'text' => 'History',

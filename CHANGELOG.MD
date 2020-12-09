@@ -5,4 +5,5 @@ Changelog
 
 ##### Release 1.0.0
 
-- Initial release.
+- Fixed some layout issues. (v1.0.0-rc2)
+- Initial release. (v1.0.0-rc1)
