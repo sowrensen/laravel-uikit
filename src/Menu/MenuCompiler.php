@@ -3,10 +3,17 @@
 
 namespace Sowren\LaravelUikit\Menu;
 
+use Illuminate\Support\Arr;
+use phpDocumentor\Reflection\Types\Self_;
 use Sowren\LaravelUikit\Helpers\MenuHelper;
+use Sowren\LaravelUikit\BookmarkIsNotFound;
 
 class MenuCompiler
 {
+    private const BEFORE = 0;
+    private const AFTER = 1;
+    private const INSIDE = 2;
+
     /**
      * The sidebar menu items.
      *
@@ -52,6 +59,55 @@ class MenuCompiler
         if (!empty($transformedItems)) {
             array_push($this->menu, ...$transformedItems);
         }
+    }
+
+    public function addBefore($bookmark, ...$items)
+    {
+        $this->addDynamically($bookmark, self::BEFORE, ...$items);
+    }
+
+    public function addAfter($bookmark, ...$items)
+    {
+        $this->addDynamically($bookmark, self::AFTER, ...$items);
+    }
+
+    public function addInside($bookmark, ...$items)
+    {
+        $this->addDynamically($bookmark, self::INSIDE, ...$items);
+    }
+
+    private function addDynamically($bookmark, $placement, ...$items)
+    {
+        if (!($itemPath = $this->findItem($bookmark, $this->menu))) {
+            throw new BookmarkIsNotFound('The bookmark you provided is not found in the menu!');
+        }
+        $bookmarkIndex = last($itemPath);
+        if ($placement === self::INSIDE) {
+            $targetPath = implode('.', array_merge($itemPath, ['submenu']));
+            $targetItem = Arr::get($this->menu, $targetPath, []);
+            array_push($targetItem, ...$items);
+        } else {
+            $targetPath = implode('.', array_slice($itemPath, 0, -1)) ?: null;
+            $targetItem = Arr::get($this->menu, $targetPath, $this->menu);
+            array_splice($targetItem, $bookmarkIndex + $placement, 0, $items);
+        }
+
+        Arr::set($this->menu, $targetPath, $targetItem);
+        $this->menu = $this->transformItems($this->menu);
+    }
+
+    public function findItem($bookmark, $items)
+    {
+        foreach ($items as $key => $item) {
+            if (isset($item['bookmark']) && $item['bookmark'] === $bookmark) {
+                return [$key];
+            } elseif (MenuHelper::isSubmenu($item)) {
+                if ($childPath = $this->findItem($bookmark, $item['submenu'])) {
+                    return array_merge([$key, 'submenu'], $childPath);
+                }
+            }
+        }
+        return [];
     }
 
     /**

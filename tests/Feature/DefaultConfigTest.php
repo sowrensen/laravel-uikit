@@ -15,7 +15,7 @@ class DefaultConfigTest extends TestCase
     {
         $this->assertNull(\Config::get('uikit.brand_logo'));
         $this->assertEquals('#262626', \Config::get('uikit.navbar.background'));
-        $this->assertFalse(\Config::get('uikit.navbar.logo.enabled'));
+        $this->assertFalse(\Config::get('uikit.navbar.logo.display_image'));
         $this->assertTrue(\Config::get('uikit.navbar.user_section.enabled'));
         $this->assertIsArray(\Config::get('uikit.sidebar.menu'));
         $this->assertEquals('#EAEAEA', \Config::get('uikit.footer.background'));

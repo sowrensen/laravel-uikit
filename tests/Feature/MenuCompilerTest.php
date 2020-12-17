@@ -61,4 +61,47 @@ class MenuCompilerTest extends TestCase
         $compiler->add(...[['text' => 'Profile', 'url' => '#', 'restricted' => true], ['divider' => true]]);
         $this->assertCount(1, $compiler->getMenu());
     }
+
+    /** @test */
+    public function testAddItemInside()
+    {
+        $compiler = $this->makeMenuCompiler();
+        $compiler->add(...
+            [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 2', 'submenu' => [], 'bookmark' => 'item_2']]);
+        $this->assertCount(2, $compiler->getMenu());
+        $this->assertCount(0, $compiler->getMenu()[1]['submenu']);
+        $compiler->addInside('item_2', [
+            'text' => 'Item 31',
+            'url' => '#'
+        ]);
+        $this->assertCount(1, $compiler->getMenu()[1]['submenu']);
+    }
+
+    /** @test */
+    public function testAddItemBefore()
+    {
+        $compiler = $this->makeMenuCompiler();
+        $compiler->add(...
+            [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 3', 'submenu' => [], 'bookmark' => 'item_3']]);
+        $this->assertCount(2, $compiler->getMenu());
+        $compiler->addBefore('item_3', [
+            'text' => 'Item 2',
+            'url' => '#'
+        ]);
+        $this->assertCount(3, $compiler->getMenu());
+    }
+
+    /** @test */
+    public function testAddItemAfter()
+    {
+        $compiler = $this->makeMenuCompiler();
+        $compiler->add(...
+            [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 2', 'submenu' => [], 'bookmark' => 'item_2']]);
+        $this->assertCount(2, $compiler->getMenu());
+        $compiler->addBefore('item_2', [
+            'text' => 'Item 3',
+            'url' => '#'
+        ]);
+        $this->assertCount(3, $compiler->getMenu());
+    }
 }
