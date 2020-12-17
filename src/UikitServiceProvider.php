@@ -2,9 +2,11 @@
 
 namespace Sowren\LaravelUikit;
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container;
-use Sowren\LaravelUikit\Providers\EventServiceProvider;
+use Sowren\LaravelUikit\Events\MenuCompiling;
+use Sowren\LaravelUikit\Listeners\RegisterMenu;
 use Sowren\LaravelUikit\Http\ViewComposers\UikitComposer;
 
 class UikitServiceProvider extends ServiceProvider
@@ -107,6 +109,6 @@ class UikitServiceProvider extends ServiceProvider
      */
     private function registerEventListeners()
     {
-        $this->app->register(EventServiceProvider::class);
+        Event::listen(MenuCompiling::class, [RegisterMenu::class, 'handle']);
     }
 }

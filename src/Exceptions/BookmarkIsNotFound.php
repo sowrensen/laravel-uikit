@@ -1,10 +1,9 @@
 <?php
 
 
-namespace Sowren\LaravelUikit;
-
+namespace Sowren\LaravelUikit\Exceptions;
 
 class BookmarkIsNotFound extends \Exception
 {
-
+    //
 }
