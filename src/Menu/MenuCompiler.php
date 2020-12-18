@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sowren\LaravelUikit\Menu;
 
 use Illuminate\Support\Arr;
@@ -60,26 +59,56 @@ class MenuCompiler
         }
     }
 
-    public function addBefore($bookmark, ...$items)
+    /**
+     * Add new items before a specified bookmark.
+     *
+     * @param  string  $bookmark
+     * @param  mixed  ...$items
+     * @throws BookmarkIsNotFound
+     */
+    public function addBefore(string $bookmark, ...$items)
     {
         $this->addDynamically($bookmark, self::BEFORE, ...$items);
     }
 
-    public function addAfter($bookmark, ...$items)
+    /**
+     * Add new items after a specified bookmark.
+     *
+     * @param  string  $bookmark
+     * @param  mixed  ...$items
+     * @throws BookmarkIsNotFound
+     */
+    public function addAfter(string $bookmark, ...$items)
     {
         $this->addDynamically($bookmark, self::AFTER, ...$items);
     }
 
-    public function addInside($bookmark, ...$items)
+    /**
+     * Add new item inside another item as child/submenu.
+     *
+     * @param  string  $bookmark
+     * @param  mixed  ...$items
+     * @throws BookmarkIsNotFound
+     */
+    public function addInside(string $bookmark, ...$items)
     {
         $this->addDynamically($bookmark, self::INSIDE, ...$items);
     }
 
-    private function addDynamically($bookmark, $placement, ...$items)
+    /**
+     * Add menu items dynamically during runtime.
+     *
+     * @param  string  $bookmark
+     * @param  int  $placement
+     * @param  mixed  ...$items
+     * @throws BookmarkIsNotFound
+     */
+    private function addDynamically(string $bookmark, int $placement, ...$items)
     {
         if (!($itemPath = $this->findItem($bookmark, $this->menu))) {
             throw new BookmarkIsNotFound('The bookmark you provided is not found in the menu!');
         }
+
         $bookmarkIndex = last($itemPath);
         if ($placement === self::INSIDE) {
             $targetPath = implode('.', array_merge($itemPath, ['submenu']));
@@ -92,10 +121,18 @@ class MenuCompiler
         }
 
         Arr::set($this->menu, $targetPath, $targetItem);
+        // Reapply filters as new items are added
         $this->menu = $this->transformItems($this->menu);
     }
 
-    public function findItem($bookmark, $items)
+    /**
+     * Locate the path of a menu item.
+     *
+     * @param  string  $bookmark
+     * @param  array  $items
+     * @return array
+     */
+    public function findItem(string $bookmark, array $items)
     {
         foreach ($items as $key => $item) {
             if (isset($item['bookmark']) && $item['bookmark'] === $bookmark) {

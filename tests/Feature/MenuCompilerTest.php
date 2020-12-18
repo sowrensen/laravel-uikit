@@ -65,43 +65,53 @@ class MenuCompilerTest extends TestCase
     /** @test */
     public function testAddItemInside()
     {
+        $new = [
+            'text' => 'Item 31',
+            'url' => '#'
+        ];
         $compiler = $this->makeMenuCompiler();
         $compiler->add(...
             [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 2', 'submenu' => [], 'bookmark' => 'item_2']]);
         $this->assertCount(2, $compiler->getMenu());
-        $this->assertCount(0, $compiler->getMenu()[1]['submenu']);
-        $compiler->addInside('item_2', [
-            'text' => 'Item 31',
-            'url' => '#'
-        ]);
-        $this->assertCount(1, $compiler->getMenu()[1]['submenu']);
+        $this->assertCount(0, \Arr::get($compiler->getMenu(), '1.submenu'));
+        $compiler->addInside('item_2', $new);
+        $this->assertCount(1, \Arr::get($compiler->getMenu(), '1.submenu'));
+        $this->assertEquals($new['text'], \Arr::get($compiler->getMenu(), '1.submenu.0.text'));
     }
 
     /** @test */
     public function testAddItemBefore()
     {
-        $compiler = $this->makeMenuCompiler();
-        $compiler->add(...
-            [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 3', 'submenu' => [], 'bookmark' => 'item_3']]);
-        $this->assertCount(2, $compiler->getMenu());
-        $compiler->addBefore('item_3', [
+        $new = [
             'text' => 'Item 2',
             'url' => '#'
+        ];
+        $compiler = $this->makeMenuCompiler();
+        $compiler->add(...[
+            ['text' => 'Item 1', 'url' => '#'],
+            ['text' => 'Item 3', 'submenu' => [], 'bookmark' => 'item_3']
         ]);
+        $this->assertCount(2, $compiler->getMenu());
+        $compiler->addBefore('item_3', $new);
         $this->assertCount(3, $compiler->getMenu());
+        $this->assertEquals($new['text'], \Arr::get($compiler->getMenu(), '1.text'));
     }
 
     /** @test */
     public function testAddItemAfter()
     {
-        $compiler = $this->makeMenuCompiler();
-        $compiler->add(...
-            [['text' => 'Item 1', 'url' => '#'], ['text' => 'Item 2', 'submenu' => [], 'bookmark' => 'item_2']]);
-        $this->assertCount(2, $compiler->getMenu());
-        $compiler->addBefore('item_2', [
+        $new = [
             'text' => 'Item 3',
             'url' => '#'
+        ];
+        $compiler = $this->makeMenuCompiler();
+        $compiler->add(...[
+            ['text' => 'Item 1', 'url' => '#'],
+            ['text' => 'Item 2', 'submenu' => [], 'bookmark' => 'item_2']
         ]);
+        $this->assertCount(2, $compiler->getMenu());
+        $compiler->addAfter('item_2', $new);
         $this->assertCount(3, $compiler->getMenu());
+        $this->assertEquals($new['text'], \Arr::get($compiler->getMenu(), '2.text'));
     }
 }
