@@ -46,4 +46,30 @@ class ServiceProviderTest extends TestCase
         $data = $view->getData();
         $this->assertArrayHasKey('uikit', $data);
     }
+
+    /** @test */
+    public function testConfigFileIsPublished()
+    {
+        if (file_exists(config_path('uikit.php'))) {
+            unlink(config_path('uikit.php'));
+        }
+        $this->assertFileDoesNotExist(config_path('uikit.php'));
+        \Artisan::call('vendor:publish', [
+            '--tag' => 'uikit-config'
+        ]);
+        $this->assertFileExists(config_path('uikit.php'));
+    }
+
+    /** @test */
+    public function testViewsArePublished()
+    {
+        if (file_exists(resource_path('views/vendor/uikit'))) {
+            \File::deleteDirectory(resource_path('views/vendor/uikit'));
+        }
+        $this->assertDirectoryDoesNotExist(resource_path('views/vendor/uikit'));
+        \Artisan::call('vendor:publish', [
+            '--tag' => 'uikit-views'
+        ]);
+        $this->assertDirectoryExists(resource_path('views/vendor/uikit'));
+    }
 }

@@ -132,7 +132,7 @@ class MenuCompiler
      * @param  array  $items
      * @return array
      */
-    public function findItem(string $bookmark, array $items)
+    private function findItem(string $bookmark, array $items)
     {
         foreach ($items as $key => $item) {
             if (isset($item['bookmark']) && $item['bookmark'] === $bookmark) {
