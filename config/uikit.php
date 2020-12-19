@@ -1,6 +1,17 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Application font
+    |--------------------------------------------------------------------------
+    |
+    | Set default font for application. Specify the URL.
+    |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Font-and-Title#application-font
+    */
+
+    'font' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -9,7 +20,7 @@ return [
     |
     | Set default title, prefix, and suffix for your application.
     |
-    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#application-title
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Font-and-Title#application-title
     */
 
     'title' => 'Laravel UIKit',
@@ -23,7 +34,7 @@ return [
     |
     | Set brand name and logo for your application.
     |
-    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#brand-name-and-logo
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Brand-Name,-and-Logo#brand-name-and-logo
     */
 
     'brand_name' => config('app.name'),
@@ -37,7 +48,7 @@ return [
     |
     | Set favicon for the application.
     |
-    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Title,-Brand-Name,-and-Logo#application-favicon
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Brand-Name,-and-Logo#application-favicon
     */
 
     'favicon' => null,
