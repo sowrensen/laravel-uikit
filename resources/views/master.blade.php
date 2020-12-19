@@ -8,10 +8,17 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- Title --}}
     <title>{!! config('uikit.title_prefix') !!}@yield('title', config('uikit.title')){!! config('uikit.title_suffix') !!}</title>
 
+    {{-- Favicon --}}
     @if(config('uikit.favicon', null))
         <link rel="icon" href="{{ asset(config('uikit.favicon')) }}" type="image/x-icon"/>
+    @endif
+
+    {{-- Fonts --}}
+    @if(config('uikit.font', null))
+        <link href="{{ config('uikit.font') }}" rel="stylesheet">
     @endif
 
     {{-- Styles --}}
