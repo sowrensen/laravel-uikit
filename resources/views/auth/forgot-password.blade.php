@@ -10,14 +10,16 @@
             <p class="uk-text-meta">Oops! Seems that you've forgotten your password. No worry, just tell us your email
                 and we will send you a password reset link to your email.</p>
             <div class="uk-form-horizontal">
-                <label for="email" class="uk-form-label">Email</label>
-                <div class="uk-form-controls">
-                    <input type="text" class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}"
-                           id="email" name="email" placeholder="jon@example.com"
-                           value="{{ old('email') }}" autocomplete="off" required>
-                    @if($errors->has('email'))
-                        <small class="uk-text-meta uk-text-danger">{{ $errors->first('email') }}</small>
-                    @endif
+                <div class="uk-margin">
+                    <label for="email" class="uk-form-label">Email</label>
+                    <div class="uk-form-controls">
+                        <input type="text" class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}"
+                               id="email" name="email" placeholder="jon@example.com"
+                               value="{{ old('email') }}" autocomplete="off" required>
+                        @if($errors->has('email'))
+                            <small class="uk-text-meta uk-text-danger">{{ $errors->first('email') }}</small>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
