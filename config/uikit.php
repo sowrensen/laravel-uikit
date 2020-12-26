@@ -227,4 +227,16 @@ return [
         'background' => '#EAEAEA',
         'classes' => 'uk-padding uk-text-small uk-flex'
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Pagination alignment
+    |--------------------------------------------------------------------------
+    |
+    | Set the alignment of the UIKit styled pagination.
+    |
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/pagination-align
+    */
+
+    'pagination_align' => ''
 ];
