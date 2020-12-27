@@ -230,13 +230,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Pagination alignment
+    | Pagination
     |--------------------------------------------------------------------------
     |
-    | Set the alignment of the UIKit styled pagination.
+    | Enable or disable UIKit styled pagination and set the alignment.
     |
-    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/pagination-align
+    | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/pagination
     */
 
-    'pagination_align' => ''
+    'pagination' => [
+        'enabled' => true,
+        'align' => ''
+    ]
 ];

@@ -1,9 +1,10 @@
 <?php
 
 
-namespace Sowren\LaravelUikit\Test\Feature;
+namespace Sowren\LaravelUikit\Test\Unit;
 
 use Sowren\LaravelUikit\Uikit;
+use Illuminate\Pagination\Paginator;
 use Sowren\LaravelUikit\Test\TestCase;
 
 class ServiceProviderTest extends TestCase
@@ -71,5 +72,12 @@ class ServiceProviderTest extends TestCase
             '--tag' => 'uikit-views'
         ]);
         $this->assertDirectoryExists(resource_path('views/vendor/uikit'));
+    }
+
+    /** @test */
+    public function testPaginationViewsAreSetToUikit()
+    {
+        $this->assertEquals('uikit::pagination.default', Paginator::$defaultView);
+        $this->assertEquals('uikit::pagination.simple', Paginator::$defaultSimpleView);
     }
 }

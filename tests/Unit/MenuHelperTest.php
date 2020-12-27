@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Sowren\LaravelUikit\Test\Feature;
+namespace Sowren\LaravelUikit\Test\Unit;
 
 use Sowren\LaravelUikit\Test\TestCase;
 use Sowren\LaravelUikit\Helpers\MenuHelper;

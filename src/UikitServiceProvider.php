@@ -2,8 +2,10 @@
 
 namespace Sowren\LaravelUikit;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use Sowren\LaravelUikit\Events\MenuCompiling;
 use Sowren\LaravelUikit\Listeners\RegisterMenu;
@@ -11,13 +13,13 @@ use Sowren\LaravelUikit\Http\ViewComposers\UikitComposer;
 
 class UikitServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(Repository $config)
     {
         if ($this->app->runningInConsole()) {
             $this->registerPublishing();
         }
 
-        $this->registerResources();
+        $this->registerResources($config);
     }
 
     /**
@@ -62,14 +64,16 @@ class UikitServiceProvider extends ServiceProvider
     /**
      * Register all package resources.
      *
+     * @param  Repository  $config
      * @return void
      */
-    private function registerResources()
+    private function registerResources(Repository $config)
     {
         $this->registerViews();
         $this->registerConfig();
         $this->registerViewComposer();
         $this->registerEventListeners();
+        $this->registerPagination($config);
     }
 
     /**
@@ -110,5 +114,19 @@ class UikitServiceProvider extends ServiceProvider
     private function registerEventListeners()
     {
         Event::listen(MenuCompiling::class, [RegisterMenu::class, 'handle']);
+    }
+
+    /**
+     * Set UIKit pagination views.
+     *
+     * @param  Repository  $config
+     */
+    private function registerPagination(Repository $config)
+    {
+        if (!$config->get('uikit.pagination.enabled', true)) {
+            return;
+        }
+        Paginator::defaultView('uikit::pagination.default');
+        Paginator::defaultSimpleView('uikit::pagination.simple');
     }
 }

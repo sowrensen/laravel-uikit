@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <ul class="uk-pagination {{ $align ?? config('uikit.pagination_align', '') }}">
+    <ul class="uk-pagination {{ $align ?? config('uikit.pagination.align', '') }}">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
             <li class="uk-disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
