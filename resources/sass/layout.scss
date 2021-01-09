@@ -10,6 +10,10 @@
   padding-top: 80px
 }
 
+#wrapper {
+  z-index: -9999;
+}
+
 .ease-in-out {
   transition: padding-left 0.3s ease-in-out;
 }
