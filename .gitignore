@@ -14,3 +14,4 @@ yarn-error.log
 .vscode/
 storage/
 .php_cs.cache
+composer.lock
