@@ -60,19 +60,105 @@ return [
     |
     | Set names of your auth routes.
     |
-    | By default these are Laravel 8 route names. Note that, only
-    | route names are allowed, not URLs.
+    | By default these are Laravel 8 route names. Only routes used in this
+    | package are configurable, Laravel may have some extra routes
+    | depending on the auth scaffolding you are using.
+    |
+    | Note that, only route names are allowed, not URLs.
     |
     | Wiki: https://github.com/sowrensen/laravel-uikit/wiki/Routes-and-Authentication-Views#routes
     */
 
     'routes' => [
+        /*
+        |--------------------------------------------------------------------------
+        | Application login route
+        |--------------------------------------------------------------------------
+        |
+        | URL: /login
+        */
+
         'login_route' => 'login',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Application logout route
+        |--------------------------------------------------------------------------
+        |
+        | URL: /logout
+        */
+
         'logout_route' => 'logout',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Profile route
+        |--------------------------------------------------------------------------
+        |
+        | URL: /profile
+        */
+
         'profile_route' => 'profile',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Registration route
+        |--------------------------------------------------------------------------
+        |
+        | URL: /register
+        */
+
         'register_route' => 'register',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Request to reset password
+        |--------------------------------------------------------------------------
+        |
+        | URL: /forgot-password
+        */
+
         'password_reset' => 'password.request',
-        'password_email' => 'password.email'
+
+        /*
+        |--------------------------------------------------------------------------
+        | Send password reset email
+        |--------------------------------------------------------------------------
+        |
+        | URL: /forgot-password
+        */
+
+        'password_email' => 'password.email',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Update password via reset link
+        |--------------------------------------------------------------------------
+        |
+        | URL: /reset-password
+        */
+
+        'password_update' => 'password.update',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Confirm password to enter a secure route
+        |--------------------------------------------------------------------------
+        |
+        | URL: /user/confirm-password
+        */
+
+        'password_confirm' => 'password.confirm',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Send email verification
+        |--------------------------------------------------------------------------
+        |
+        | URL: /email/verification-notification
+        */
+
+        'verification_send' => 'verification.send'
     ],
 
     /*
