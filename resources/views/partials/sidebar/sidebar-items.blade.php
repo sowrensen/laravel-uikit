@@ -1,4 +1,4 @@
-@inject('helper', Sowren\LaravelUikit\Helpers\MenuHelper::class)
+@inject('helper', 'Sowren\LaravelUikit\Helpers\MenuHelper')
 
 @includeWhen($helper->isHeader($item), 'uikit::partials.sidebar.sidebar-header')
 

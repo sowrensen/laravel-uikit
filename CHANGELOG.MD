@@ -5,6 +5,11 @@ Changelog
 
 ##### Release 1.x
 
+- Fixed `MenuHelper` class injection. (v1.1.1)
+- Added rest of the auth views. (v1.1.0)
+- Additional route config keys. (v1.1.0)
+- Section for flashing session message in auth pages. (v1.1.0)
+- Stable release. (v1.0.0)
 - Fixed some style issues. (v1.0.0-rc6)
 - Removed hardcoded string from pagination views. (v1.0.0-rc6)
 - New `uk-text-monospace` CSS class. (v1.0.0-rc5)
